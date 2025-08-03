@@ -39,17 +39,19 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.WeakHashMap;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.GrayFilter;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;
 
-import org.apache.commons.lang.CharUtils;
 import org.apache.log4j.Logger;
 
 /**
@@ -65,12 +67,23 @@ public final class ApplicationHelper {
 	private static FileLock exclusiveLock;
 
 	public static String DEFAULT_DATE_FORMAT_STRING=                         "EE dd/MMM yy"; //$NON-NLS-1$
-	public static SimpleDateFormat defaultDateFormat=         new SimpleDateFormat(DEFAULT_DATE_FORMAT_STRING);
-	private static SimpleDateFormat isoDateTimeFormat=         new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ"); //$NON-NLS-1$
-	private static SimpleDateFormat isoDateFormat=             new SimpleDateFormat("yyyy-MM-dd"); //$NON-NLS-1$
-	private static SimpleDateFormat readableISODateTimeFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //$NON-NLS-1$
+	// Thread-safe date formatters using ThreadLocal
+	private static final ThreadLocal<SimpleDateFormat> defaultDateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat(DEFAULT_DATE_FORMAT_STRING));
+	private static final ThreadLocal<SimpleDateFormat> isoDateTimeFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")); //$NON-NLS-1$
+	private static final ThreadLocal<SimpleDateFormat> isoDateFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd")); //$NON-NLS-1$
+	private static final ThreadLocal<SimpleDateFormat> readableISODateTimeFormat = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")); //$NON-NLS-1$
 	
-	private static Map<String, ImageIcon> iconCache= new HashMap<String, ImageIcon>(50);
+	// Use WeakHashMap for memory-efficient icon caching
+	private static Map<String, ImageIcon> iconCache = new WeakHashMap<>();
+	
+	// Font cache for reusing Font objects
+	private static final Map<String, Font> fontCache = new HashMap<>();
+	
+	// Cache for font availability checks
+	private static final Map<String, Boolean> fontAvailabilityCache = new HashMap<>();
+
+	// Cache for disabled icons to reduce memory usage and improve performance
+	private static final Map<String, ImageIcon> disabledIconCache = new WeakHashMap<>();
 
 	
 	public static final String DATA_PROPERTY= "gtd-free.data"; //$NON-NLS-1$
@@ -161,32 +174,141 @@ public final class ApplicationHelper {
 
 
 	
+	/**
+	 * Get a cached disabled version of an icon
+	 */
+	public static ImageIcon getCachedDisabledIcon(String iconName) {
+		synchronized (disabledIconCache) {
+			ImageIcon disabled = disabledIconCache.get(iconName);
+			if (disabled == null) {
+				ImageIcon original = ApplicationHelper.getIcon(iconName);
+				if (original != null) {
+					disabled = new ImageIcon(GrayFilter.createDisabledImage(original.getImage()));
+					disabledIconCache.put(iconName, disabled);
+				}
+			}
+			return disabled;
+		}
+	}
+
+	/**
+	 * Get the default date format for thread-safe usage
+	 */
+	public static SimpleDateFormat getDefaultDateFormat() {
+		return defaultDateFormat.get();
+	}
+	
+	/**
+	 * Get the ISO date format for thread-safe usage
+	 */
+	public static SimpleDateFormat getISODateFormat() {
+		return isoDateFormat.get();
+	}
+	
+	/**
+	 * Get the ISO date-time format for thread-safe usage
+	 */
+	public static SimpleDateFormat getISODateTimeFormat() {
+		return isoDateTimeFormat.get();
+	}
+	
+	/**
+	 * Get the readable ISO date-time format for thread-safe usage
+	 */
+	public static SimpleDateFormat getReadableISODateTimeFormat() {
+		return readableISODateTimeFormat.get();
+	}
+
 	public static ImageIcon getIcon(String name) {
-		ImageIcon i= iconCache.get(name);
-		if (i!=null) {
+		// Synchronize access to the WeakHashMap
+		synchronized (iconCache) {
+			ImageIcon i = iconCache.get(name);
+			if (i != null) {
+				return i;
+			}
+			
+			i = loadIcon(name);
+			if (i != null) {
+				iconCache.put(name, i);
+			}
 			return i;
 		}
-		
-		i= loadIcon(name);
-		iconCache.put(name, i);
-		return i;
+	}
+
+	/**
+	 * Clear all caches to free memory (useful during low memory conditions)
+	 */
+	public static synchronized void clearCaches() {
+		synchronized (iconCache) {
+			iconCache.clear();
+		}
+		synchronized (fontCache) {
+			fontCache.clear();
+		}
+		synchronized (fontAvailabilityCache) {
+			fontAvailabilityCache.clear();
+		}
+		synchronized (disabledIconCache) {
+			disabledIconCache.clear();
+		}
+		// Suggest garbage collection (non-blocking hint)
+		System.gc();
+		Logger.getLogger(ApplicationHelper.class).debug("Cleared all caches and suggested garbage collection");
+	}
+	
+	/**
+	 * Get cache statistics for monitoring
+	 */
+	public static String getCacheStats() {
+		synchronized (iconCache) {
+			int iconCacheSize = iconCache.size();
+			int disabledIconCacheSize;
+			int fontCacheSize;
+			int fontAvailCacheSize;
+			
+			synchronized (disabledIconCache) {
+				disabledIconCacheSize = disabledIconCache.size();
+			}
+			synchronized (fontCache) {
+				fontCacheSize = fontCache.size();
+			}
+			synchronized (fontAvailabilityCache) {
+				fontAvailCacheSize = fontAvailabilityCache.size();
+			}
+			
+			return String.format("Caches - Icons: %d, DisabledIcons: %d, Fonts: %d, FontAvail: %d", 
+				iconCacheSize, disabledIconCacheSize, fontCacheSize, fontAvailCacheSize);
+		}
 	}
 
 	public static final ImageIcon loadIcon(String resource) {
         try {
         	URL url = ApplicationHelper.class.getClassLoader().getResource(resource);
-        	if (!(url.getContent() instanceof ImageProducer)) return null;
+        	if (url == null) return null;
+        	
+        	// Check content type more efficiently
+        	Object content = url.getContent();
+        	if (!(content instanceof ImageProducer)) return null;
+        	
             return new ImageIcon(url);
         } catch (Exception e) {
+        	Logger.getLogger(ApplicationHelper.class).debug("Failed to load icon: " + resource, e);
             return null;
         }
     }
+    
     public static final Image loadImage(String resource) {
         try {
         	URL url = ApplicationHelper.class.getClassLoader().getResource(resource);
-        	if (!(url.getContent() instanceof ImageProducer)) return null;
+        	if (url == null) return null;
+        	
+        	// Check content type more efficiently
+        	Object content = url.getContent();
+        	if (!(content instanceof ImageProducer)) return null;
+        	
             return new ImageIcon(url).getImage();
         } catch (Exception e) {
+        	Logger.getLogger(ApplicationHelper.class).debug("Failed to load image: " + resource, e);
             return null;
         }
     }
@@ -220,31 +342,36 @@ public final class ApplicationHelper {
     			return null;
     		}
     		
-			ByteArrayOutputStream os= new ByteArrayOutputStream(is.available());
-			while (is.available()>0) {
-				os.write(is.read());
+    		// Use NIO-optimized reading with proper buffering
+    		try (ByteArrayOutputStream os = new ByteArrayOutputStream(Math.max(is.available(), 1024))) {
+    			byte[] buffer = new byte[8192]; // Larger buffer for better I/O performance
+				int bytesRead;
+				while ((bytesRead = is.read(buffer)) != -1) {
+					os.write(buffer, 0, bytesRead);
+				}
+				return os.toByteArray();
 			}
-			return os.toByteArray();
 
 			
 		} catch (Exception e) {
+			Logger.getLogger(ApplicationHelper.class).warn("Error loading resource: " + name, e);
 			return null;
 		} finally {
 			if (is!=null) {
 				try {
 					is.close();
 				} catch (IOException e) {
-					//
+					Logger.getLogger(ApplicationHelper.class).debug("Error closing resource stream", e);
 				}
 			}
 		}
     }
     
     public static final String formatLongISO(Date d) {
-    	return isoDateTimeFormat.format(d);
+    	return isoDateTimeFormat.get().format(d);
     }
     public static final Date parseLongISO(String d) throws ParseException {
-    	return isoDateTimeFormat.parse(d);
+    	return isoDateTimeFormat.get().parse(d);
     }
     
 	public static final File getDataFolder() {
@@ -300,8 +427,8 @@ public final class ApplicationHelper {
 		if (exclusiveLock!=null) {
 			return false;
 		}
-		try {
-			FileChannel lock= new RandomAccessFile(new File(location,LOCK_FILE_NAME),"rw").getChannel(); //$NON-NLS-1$
+		try (RandomAccessFile raf = new RandomAccessFile(new File(location,LOCK_FILE_NAME),"rw"); //$NON-NLS-1$
+		     FileChannel lock = raf.getChannel()) {
 			exclusiveLock= lock.tryLock();
 		} catch (Exception e) {
 			return false;
@@ -312,9 +439,15 @@ public final class ApplicationHelper {
 	public synchronized static final void releaseLock() {
 		if (exclusiveLock!=null) {
 			try {
-				exclusiveLock.release();
+				if (exclusiveLock.isValid()) {
+					exclusiveLock.release();
+				}
+			} catch (java.nio.channels.ClosedChannelException e) {
+				// Normal during shutdown - channel was already closed, ignore silently
 			} catch (IOException e) {
-				Logger.getLogger(ApplicationHelper.class).warn("Internal error.", e); //$NON-NLS-1$
+				Logger.getLogger(ApplicationHelper.class).debug("Lock release failed (normal during shutdown)", e);
+			} catch (Exception e) {
+				Logger.getLogger(ApplicationHelper.class).debug("Unexpected error during lock release", e);
 			}
 			exclusiveLock=null;
 		}
@@ -342,13 +475,13 @@ public final class ApplicationHelper {
 		if (date==null) {
 			return ApplicationHelper.EMPTY_STRING;
 		}
-		return defaultDateFormat.format(date);
+		return defaultDateFormat.get().format(date);
 	}
 	public static String toISODateString(Date date) {
 		if (date==null) {
 			return ApplicationHelper.EMPTY_STRING;
 		}
-		return isoDateFormat.format(date);
+		return isoDateFormat.get().format(date);
 	}
 	/**
 	 * Prints something like: '2009-02-24 14:35:06'
@@ -359,7 +492,7 @@ public final class ApplicationHelper {
 		if (date==null) {
 			return ApplicationHelper.EMPTY_STRING;
 		}
-		return readableISODateTimeFormat.format(date);
+		return readableISODateTimeFormat.get().format(date);
 	}
 
 	public static void changeDefaultFontSize(float size, String key) {
@@ -372,6 +505,145 @@ public final class ApplicationHelper {
 		Font f= UIManager.getDefaults().getFont(key+".font"); //$NON-NLS-1$
 		if (f!=null) {
 			UIManager.getDefaults().put(key+".font", new FontUIResource(f.deriveFont(style))); //$NON-NLS-1$
+		}
+	}
+	
+	/**
+	 * Get a cached font or create and cache a new one
+	 */
+	private static Font getCachedFont(String fontName, int style, int size) {
+		String key = fontName + "|" + style + "|" + size;
+		synchronized (fontCache) {
+			Font cachedFont = fontCache.get(key);
+			if (cachedFont == null) {
+				cachedFont = new Font(fontName, style, size);
+				fontCache.put(key, cachedFont);
+			}
+			return cachedFont;
+		}
+	}
+	
+	/**
+	 * Check if a font is available with caching
+	 */
+	private static boolean isFontAvailable(String fontName) {
+		synchronized (fontAvailabilityCache) {
+			Boolean available = fontAvailabilityCache.get(fontName);
+			if (available == null) {
+				String[] availableFonts = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+				available = false;
+				for (String name : availableFonts) {
+					if (name.equals(fontName)) {
+						available = true;
+						break;
+					}
+				}
+				fontAvailabilityCache.put(fontName, available);
+			}
+			return available;
+		}
+	}
+
+	/**
+	 * Configures modern UI fonts with memory-efficient caching
+	 */
+	public static void configureModernUIFonts() {
+		try {
+			// Select font with caching
+			String selectedFontName;
+			Logger logger = Logger.getLogger(ApplicationHelper.class);
+			if (isFontAvailable("Gill Sans MT")) {
+				selectedFontName = "Gill Sans MT";
+				if (logger.isDebugEnabled()) {
+					logger.debug("Using Gill Sans MT font for UI");
+				}
+			} else if (isFontAvailable("Segoe UI")) {
+				selectedFontName = "Segoe UI";
+				if (logger.isDebugEnabled()) {
+					logger.debug("Using Segoe UI font for UI (Gill Sans MT not available)");
+				}
+			} else {
+				selectedFontName = Font.SANS_SERIF;
+				if (logger.isDebugEnabled()) {
+					logger.debug("Using default sans serif font for UI (neither Gill Sans MT nor Segoe UI available)");
+				}
+			}
+			
+			// Use cached fonts for better memory usage
+			Font primaryFont = getCachedFont(selectedFontName, Font.PLAIN, 13);
+			Font smallFont = getCachedFont(selectedFontName, Font.PLAIN, 12);
+			Font largeFont = getCachedFont(selectedFontName, Font.PLAIN, 14);
+			
+			// Set fonts for various UI components
+			UIManager.put("Button.font", new FontUIResource(primaryFont));
+			UIManager.put("Label.font", new FontUIResource(primaryFont));
+			UIManager.put("TextField.font", new FontUIResource(primaryFont));
+			UIManager.put("TextArea.font", new FontUIResource(primaryFont));
+			UIManager.put("ComboBox.font", new FontUIResource(primaryFont));
+			UIManager.put("List.font", new FontUIResource(primaryFont));
+			UIManager.put("Table.font", new FontUIResource(primaryFont));
+			UIManager.put("Tree.font", new FontUIResource(primaryFont));
+			UIManager.put("TabbedPane.font", new FontUIResource(primaryFont));
+			UIManager.put("MenuBar.font", new FontUIResource(primaryFont));
+			UIManager.put("Menu.font", new FontUIResource(primaryFont));
+			UIManager.put("MenuItem.font", new FontUIResource(primaryFont));
+			UIManager.put("PopupMenu.font", new FontUIResource(primaryFont));
+			UIManager.put("CheckBox.font", new FontUIResource(primaryFont));
+			UIManager.put("RadioButton.font", new FontUIResource(primaryFont));
+			UIManager.put("TitledBorder.font", new FontUIResource(primaryFont));
+			UIManager.put("ToolTip.font", new FontUIResource(smallFont));
+			UIManager.put("Panel.font", new FontUIResource(primaryFont));
+			UIManager.put("ScrollPane.font", new FontUIResource(primaryFont));
+			UIManager.put("Viewport.font", new FontUIResource(primaryFont));
+			
+			// Set larger font for titles and headers
+			UIManager.put("InternalFrame.titleFont", new FontUIResource(largeFont));
+			
+			if (logger.isDebugEnabled()) {
+				logger.debug("Modern UI fonts (" + selectedFontName + ") configured successfully.");
+			}
+		} catch (Exception e) {
+			Logger.getLogger(ApplicationHelper.class).warn("Failed to configure modern UI fonts", e);
+		}
+	}
+
+	/**
+	 * Configure Windows Look and Feel with modern enhancements
+	 */
+	public static void configureWindowsLookAndFeel() {
+		Logger logger = Logger.getLogger(ApplicationHelper.class);
+		try {
+			String osName = System.getProperty("os.name");
+			if (osName != null && osName.toLowerCase().contains("windows")) {
+				// Use the native Windows Look and Feel for the most authentic Windows experience
+				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				
+				// Enable modern Windows features
+				System.setProperty("sun.java2d.uiScale", "1.0");
+				System.setProperty("awt.useSystemAAFontSettings", "on");
+				System.setProperty("swing.aatext", "true");
+				
+				if (logger.isDebugEnabled()) {
+					logger.debug("Windows Look and Feel configured successfully");
+				}
+			} else {
+				// For non-Windows systems, try to use the system L&F
+				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				if (logger.isDebugEnabled()) {
+					logger.debug("System Look and Feel configured for non-Windows platform");
+				}
+			}
+		} catch (Exception e) {
+			logger.warn("Failed to configure Windows Look and Feel", e);
+			try {
+				// Fallback to cross-platform L&F
+				UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+				if (logger.isDebugEnabled()) {
+					logger.debug("Using cross-platform Look and Feel as fallback");
+				}
+			} catch (Exception e2) {
+				logger.warn("Failed to set fallback Look and Feel", e2);
+			}
 		}
 	}
 
@@ -423,7 +695,7 @@ public final class ApplicationHelper {
                 default :
                 	// TODO: this does not escape properly split characters. Should I care?  
         			if (Character.isISOControl(ch)) {
-        				sb.append(CharUtils.unicodeEscaped(ch));
+        				sb.append(String.format("\\u%04x", (int)ch));
         			} else {
         				sb.append(ch);
         			}
@@ -449,17 +721,20 @@ public final class ApplicationHelper {
 	public static synchronized void executeInBackground(Runnable r) {
 		
 		if (backgroundExecutor==null) {
-			backgroundExecutor= new ThreadPoolExecutor(0,1,1,TimeUnit.SECONDS,new LinkedBlockingQueue<Runnable>(),new ThreadFactory() {
+			// Use bounded queue to prevent memory issues
+			backgroundExecutor= new ThreadPoolExecutor(0,1,1,TimeUnit.SECONDS,new ArrayBlockingQueue<>(100),new ThreadFactory() {
 			
 				@Override
 				public Thread newThread(Runnable r) {
 					Thread t= new Thread(r);
-					t.setName("BackgroundExecutor"); //$NON-NLS-1$
+					t.setName("BackgroundExecutor-" + ThreadLocalRandom.current().nextInt(1000)); //$NON-NLS-1$
 					t.setPriority(Thread.MIN_PRIORITY);
-					t.setDaemon(false);
+					t.setDaemon(true); // Changed to daemon to not prevent JVM shutdown
 					return t;
 				}
 			});
+			// Configure rejection policy for when queue is full
+			backgroundExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardOldestPolicy());
 		}
 		
 		backgroundExecutor.execute(r);

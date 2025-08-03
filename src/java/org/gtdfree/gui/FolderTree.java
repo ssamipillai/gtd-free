@@ -34,6 +34,7 @@ import java.util.EventObject;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -306,7 +307,7 @@ public class FolderTree extends JTree {
 		public void add(MutableTreeNode newChild) {
 			super.add(newChild);
 			
-			Collections.sort(children, this);
+			Collections.sort((Vector<DefaultMutableTreeNode>)(Vector<?>)children, this);
 		}
 		public int compare(DefaultMutableTreeNode o1, DefaultMutableTreeNode o2) {
 			Object f1= o1.getUserObject();
@@ -320,7 +321,7 @@ public class FolderTree extends JTree {
 		@SuppressWarnings("unchecked")
 		public void sort() {
 			if (children!=null) {
-				Collections.sort(children, this);
+				Collections.sort((Vector<DefaultMutableTreeNode>)(Vector<?>)children, this);
 			}
 		}
 	}
@@ -436,10 +437,10 @@ public class FolderTree extends JTree {
 			public void treeExpanded(TreeExpansionEvent event) {
 				TreePath tp= event.getPath();
 				
-				Enumeration<DefaultMutableTreeNode> en= ((DefaultMutableTreeNode)tp.getLastPathComponent()).children();
+				Enumeration<TreeNode> en= ((DefaultMutableTreeNode)tp.getLastPathComponent()).children();
 				
 				while(en.hasMoreElements()) {
-					DefaultMutableTreeNode n = en.nextElement();
+					DefaultMutableTreeNode n = (DefaultMutableTreeNode)en.nextElement();
 					Object o= n.getUserObject();
 					if (o instanceof Folder) {
 						checkIfShow((Folder)o);
@@ -1006,14 +1007,14 @@ public class FolderTree extends JTree {
 
 	@SuppressWarnings("unchecked")
 	public DefaultMutableTreeNode folderToNode(Folder f) {
-		Enumeration<DefaultMutableTreeNode> en=null;
+		Enumeration<TreeNode> en=null;
 		DefaultMutableTreeNode p= folderToParentNode(f);
 		if (p!=null) {
 			en= p.children();
 		}
 		if (en!=null) {
 			while (en.hasMoreElements()) {
-				DefaultMutableTreeNode n= en.nextElement();
+				DefaultMutableTreeNode n= (DefaultMutableTreeNode)en.nextElement();
 				if (n.getUserObject()==f) {
 					return n;
 				}

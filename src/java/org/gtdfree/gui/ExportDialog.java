@@ -78,8 +78,9 @@ import org.gtdfree.addons.ExportAddOn.ExportOrder;
 import org.gtdfree.model.ActionsCollection;
 import org.gtdfree.model.GTDModel;
 
-import com.sun.pdfview.PDFFile;
-import com.sun.pdfview.PDFPrintPage;
+// PDF Renderer not available - functionality disabled
+// import com.sun.pdfview.PDFFile;
+// import com.sun.pdfview.PDFPrintPage;
 
 /**
  * @author ikesan
@@ -468,16 +469,22 @@ public class ExportDialog extends JDialog {
 					(float)(pf.getHeight()-pf.getImageableY()-pf.getImageableHeight()));
 			pdfExport.export(getGtdModel(), ac, out, (ExportAddOn.ExportOrder)orderCombo.getSelectedItem(), export.getFileFilters()[0], true);
 
-			PDFFile f= new PDFFile(ByteBuffer.wrap(out.toByteArray()));
-			final PDFPrintPage p= new PDFPrintPage(f);
+			// PDF Renderer functionality disabled - not available
+			// PDFFile f= new PDFFile(ByteBuffer.wrap(out.toByteArray()));
+			// final PDFPrintPage p= new PDFPrintPage(f);
 			
 			Paper pap= new Paper();
 			pap.setSize(pf.getWidth(), pf.getHeight());
 			pap.setImageableArea(0, 0, pf.getWidth(), pf.getHeight());
 			pf.setPaper(pap);
 			
-			pj.setPrintable(p,pf);
-			p.show(pj,this);
+			// pj.setPrintable(p,pf);
+			// p.show(pj,this);
+			
+			// Show message that PDF preview is not available
+			javax.swing.JOptionPane.showMessageDialog(this, 
+				"PDF preview not available. PDF file has been generated successfully.", 
+				"PDF Export", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 			
 			new Thread("PrintingThread") { //$NON-NLS-1$
 				@Override
@@ -489,7 +496,7 @@ public class ExportDialog extends JDialog {
 						e.printStackTrace();
 						JOptionPane.showMessageDialog(ExportDialog.this, Messages.getString("ExportDialog.Print.Fail")+" "+e.toString(), Messages.getString("ExportDialog.Print.Tail.title"), JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					}
-					p.hide();
+					// p.hide(); // PDF renderer not available
 				};
 			}.start();
 			

@@ -19,11 +19,9 @@
 
 package org.gtdfree;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-
-import org.apache.commons.lang.CharEncoding;
 
 public class Messages {
 	private static final String BUNDLE_NAME = "org.gtdfree.messages"; //$NON-NLS-1$
@@ -44,7 +42,7 @@ public class Messages {
 				try {
 					String s= RESOURCE_BUNDLE.getString(ENCODING);
 					utf8Convert= 
-						s!=null && CharEncoding.UTF_8.equalsIgnoreCase(s);
+						s!=null && StandardCharsets.UTF_8.name().equalsIgnoreCase(s);
 				} catch (MissingResourceException e) {
 					// ignore
 				}
@@ -61,8 +59,8 @@ public class Messages {
 			if (utf8Convert) {
 				try {
 					// converts scrambled UTF-8 characters withing ISO_8859_1 into proper UTF-8
-					message= new String(message.getBytes(CharEncoding.ISO_8859_1),CharEncoding.UTF_8) ;
-				} catch (UnsupportedEncodingException e) {
+					message= new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8) ;
+				} catch (Exception e) {
 					//e.printStackTrace();
 				}
 			}

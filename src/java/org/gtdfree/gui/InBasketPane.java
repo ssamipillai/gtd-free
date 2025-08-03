@@ -20,18 +20,15 @@
 package org.gtdfree.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.print.PrinterException;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.MessageFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.AbstractAction;
@@ -43,8 +40,6 @@ import javax.swing.JSplitPane;
 import javax.swing.KeyStroke;
 import javax.swing.JTable.PrintMode;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -59,8 +54,6 @@ import org.gtdfree.model.Folder;
 import org.gtdfree.model.FolderEvent;
 import org.gtdfree.model.FolderListener;
 import org.gtdfree.model.Action.Resolution;
-
-import de.wannawork.jcalendar.JCalendarComboBox;
 
 
 /**
@@ -80,8 +73,6 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 	private AbstractAction delAction;
 	private AbstractAction clearAction;
 	private boolean setting=false;
-	private JCalendarComboBox datePicker;
-
 
 	private FolderListener noteListener= new FolderListener() {
 	
@@ -115,8 +106,6 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 
 	private boolean adding;
 
-	private JButton clearDateButton;
-
 	
 	
 	/**
@@ -141,28 +130,20 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 		}
 		this.selectedAction = selectedAction;
 		if (selectedAction==null) {
-			setting=true;
 			idLabel.setText(Messages.getString("ActionPanel.ID")+Messages.getString("ActionPanel.NA")); //$NON-NLS-1$ //$NON-NLS-2$
 			ideaText.setText(ApplicationHelper.EMPTY_STRING);
 			ideaText.clearUndoHistory();
-			datePicker.setDate(null);
-			datePicker.setEnabled(false);
-			clearDateButton.setEnabled(false);
 			//getModifyAction().setEnabled(false);
 			getCloneNoteAction().setEnabled(false);
 			getDeleteAction().setEnabled(false);
 			getDoneNoteAction().setEnabled(true);
 			getNewNoteAction().setEnabled(false);
-			setting=false;
 		} else {
 			setting=true;
 			idLabel.setText(Messages.getString("ActionPanel.ID")+selectedAction.getId()); //$NON-NLS-1$
 			ideaText.setText(selectedAction.getDescription());
 			ideaText.setCaretPosition(0);
 			ideaText.clearUndoHistory();
-			datePicker.setDate(selectedAction.getRemind());
-			datePicker.setEnabled(true);
-			clearDateButton.setEnabled(true);
 			//getModifyAction().setEnabled(true);
 			getCloneNoteAction().setEnabled(true);
 			getDeleteAction().setEnabled(true);
@@ -187,7 +168,7 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 		jp.setBorder(new TitledBorder(Messages.getString("InBasketPane.ActionTitle"))); //$NON-NLS-1$
 
 		idLabel = new JLabel(Messages.getString("ActionPanel.ID")+Messages.getString("ActionPanel.NA")); //$NON-NLS-1$ //$NON-NLS-2$
-		jp.add(idLabel,new GridBagConstraints(0,0,2,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.HORIZONTAL,new Insets(0,4,0,4),0,0));
+		jp.add(idLabel,new GridBagConstraints(0,0,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.HORIZONTAL,new Insets(0,4,0,4),0,0));
 		
 		JScrollPane jsp= new JScrollPane();
 		ideaText= new InputTextArea();
@@ -231,66 +212,7 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 		jsp.setViewportView(ideaText);
 		jsp.setMinimumSize(ideaText.getPreferredScrollableViewportSize());
 		jsp.setPreferredSize(ideaText.getPreferredScrollableViewportSize());
-		jp.add(jsp,new GridBagConstraints(0,1,2,1,1,1,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,4,0,4),0,0));
-		
-		JPanel pp= new JPanel();
-		pp.setLayout(new GridBagLayout());
-		
-		datePicker= new JCalendarComboBox() {
-			private static final long serialVersionUID = 1L;
-			Dimension d= null;
-			@Override
-			public Dimension getPreferredSize() {
-				if (d==null) {
-					Insets in= ApplicationHelper.getDefaultSlimButtonMargin();
-					d= new Dimension(super.getPreferredSize().width+6,super.getPreferredSize().height+in.top+in.bottom-4);
-				}
-				int w= super.getPreferredSize().width+6;
-				if (w>d.width) {
-					d= new Dimension(w,d.height);
-				}
-				return d;
-			}
-			@Override
-			public Dimension getMinimumSize() {
-				return getPreferredSize();
-			}
-		};
-		datePicker.setDateFormat(ApplicationHelper.defaultDateFormat);
-		Dimension d= new Dimension(datePicker.getPreferredSize().height,datePicker.getPreferredSize().height);
-		datePicker.setDate(null);
-		datePicker.setSpiningCalendarField(Calendar.DAY_OF_MONTH);
-		datePicker.addChangeListener(new ChangeListener() {
-		
-			@Override
-			public void stateChanged(ChangeEvent e) {
-				if (setting) {
-					return;
-				}
-				if (selectedAction!=null) {
-					selectedAction.setRemind(datePicker.getDate());
-				}
-			}
-		
-		});
-		pp.add(datePicker, new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.CENTER,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,2),0,0));
-		
-
-		clearDateButton= new JButton();
-		//clearDateButton.setMinimumSize(d);
-		//clearDateButton.setPreferredSize(d);
-		clearDateButton.setMargin(ApplicationHelper.getDefaultSlimButtonMargin());
-		clearDateButton.setToolTipText(Messages.getString("ActionPanel.Clear")); //$NON-NLS-1$
-		clearDateButton.setIcon(ApplicationHelper.getIcon(ApplicationHelper.icon_name_small_clear));
-		clearDateButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				datePicker.setDate(null);
-			}
-		});
-		pp.add(clearDateButton, new GridBagConstraints(1,0,1,1,0,0,GridBagConstraints.WEST,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0));
-		jp.add(pp,new GridBagConstraints(0,2,1,1,0,0,GridBagConstraints.WEST,GridBagConstraints.BOTH,new Insets(2,4,0,4),0,0));
-
+		jp.add(jsp,new GridBagConstraints(0,1,1,1,1,1,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,4,0,4),0,0));
 		
 		JPanel jp1= new JPanel();
 		jp1.setLayout(new GridBagLayout());
@@ -319,7 +241,7 @@ public class InBasketPane extends JPanel implements WorkflowPane {
 		b.setMargin(ApplicationHelper.getDefaultFatButtonMargin());
 		b.setAction(getDeleteAction());
 		jp1.add(b,new GridBagConstraints(4,0,1,1,0,0,GridBagConstraints.CENTER,GridBagConstraints.NONE,new Insets(4,4,4,4),0,0));
-		jp.add(jp1,new GridBagConstraints(1,2,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,0,0,0),0,0));
+		jp.add(jp1,new GridBagConstraints(0,2,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(0,0,0,0),0,0));
 
 		//add(jp,new GridBagConstraints(0,0,1,1,1,0,GridBagConstraints.CENTER,GridBagConstraints.BOTH,new Insets(4,4,4,4),0,0));
 

@@ -178,8 +178,8 @@ public class FilterPanel extends AbstractFilterPanel {
 		
 		});
 		searchOptionsButton.setDisabledIcon(new Icon() {
-			Icon find= new ImageIcon(GrayFilter.createDisabledImage(ApplicationHelper.getIcon(ApplicationHelper.icon_name_small_search).getImage()));		
-			Icon down= new ImageIcon(GrayFilter.createDisabledImage(ApplicationHelper.getIcon(ApplicationHelper.icon_name_tiny_options).getImage()));
+			Icon find= ApplicationHelper.getCachedDisabledIcon(ApplicationHelper.icon_name_small_search);		
+			Icon down= ApplicationHelper.getCachedDisabledIcon(ApplicationHelper.icon_name_tiny_options);
 			
 			public void paintIcon(Component c, Graphics g, int x, int y) {
 				if (find==null || down==null) {

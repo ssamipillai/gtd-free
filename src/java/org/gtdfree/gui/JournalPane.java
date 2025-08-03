@@ -32,15 +32,15 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 import org.gtdfree.ApplicationHelper;
 import org.gtdfree.GTDFreeEngine;
 import org.gtdfree.journal.JournalEntry;
 import org.gtdfree.journal.JournalTools;
 
-import de.wannawork.jcalendar.JCalendarComboBox;
+import com.toedter.calendar.JDateChooser;
 
 /**
  * @author ikesan
@@ -53,7 +53,7 @@ public class JournalPane extends JPanel {
 	private long day;
 	private Date date;
 	private GTDFreeEngine engine;
-	private JCalendarComboBox datePicker;
+	private JDateChooser datePicker;
 	private boolean setting=false;
 	private AbstractAction newJournalEntryAction;
 	//private AbstractAction copyJournalAction;
@@ -91,16 +91,16 @@ public class JournalPane extends JPanel {
 		b.setToolTipText("Previous day"); //$NON-NLS-1$
 		jp.add(b, new GridBagConstraints(1,0,1,1,0.0,0.0,GridBagConstraints.CENTER,GridBagConstraints.NONE, new Insets(0,0,0,0),0,0));
 
-		datePicker= new JCalendarComboBox();
-		datePicker.setDateFormat(new SimpleDateFormat("EEE, d MMM yyyy")); //$NON-NLS-1$
+		datePicker= new JDateChooser();
+		datePicker.setDateFormatString("EEE, d MMM yyyy"); //$NON-NLS-1$
 		//datePicker.setFieldEditable(false);
 		//datePicker.setShowTodayButton(true);
 		//datePicker.setStripTime(true);
 		//datePicker.setShowNoneButton(false);
-		datePicker.addChangeListener(new ChangeListener() {
+		datePicker.addPropertyChangeListener("date", new PropertyChangeListener() {
 		
 			@Override
-			public void stateChanged(ChangeEvent e) {
+			public void propertyChange(PropertyChangeEvent e) {
 				setting=true;
 				//System.out.println("PICKER "+datePicker.getDate().getTime()+" "+((Date)evt.getNewValue()).getTime());
 				setDate(datePicker.getDate());

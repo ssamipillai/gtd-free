@@ -43,8 +43,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -60,7 +60,7 @@ import org.gtdfree.model.FolderListener;
 import org.gtdfree.model.Priority;
 import org.gtdfree.model.Action.Resolution;
 
-import de.wannawork.jcalendar.JCalendarComboBox;
+import com.toedter.calendar.JDateChooser;
 
 /**
  * @author ikesan
@@ -86,7 +86,7 @@ public class ActionPanel extends JPanel implements FolderListener {
 	private AbstractAction deleteAction;
 	private AbstractAction resolveAction;
 	//private DatePicker datePicker;
-	private JCalendarComboBox datePicker;
+	private JDateChooser datePicker;
 	private ProjectsCombo projectCombo;
 	private GTDFreeEngine engine;
 	private AbstractAction reopenAction;
@@ -365,17 +365,17 @@ public class ActionPanel extends JPanel implements FolderListener {
 				return getPreferredSize();
 			}
 		};*/
-		datePicker= new JCalendarComboBox();
-		datePicker.setDateFormat(ApplicationHelper.defaultDateFormat);
+		datePicker= new JDateChooser();
+		datePicker.setDateFormatString(ApplicationHelper.getDefaultDateFormat().toPattern());
 		datePicker.setDate(null);
 		d= new Dimension(datePicker.getPreferredSize().width+(int)(1.5*ApplicationHelper.getDefaultFieldHeigth()),ApplicationHelper.getDefaultFieldHeigth());
 		datePicker.setPreferredSize(d);
 		datePicker.setMinimumSize(d);
-		datePicker.setSpiningCalendarField(Calendar.DAY_OF_MONTH);
-		datePicker.addChangeListener(new ChangeListener() {
+		// setSpiningCalendarField not available in this JDateChooser version
+		datePicker.addPropertyChangeListener("date", new PropertyChangeListener() {
 		
 			@Override
-			public void stateChanged(ChangeEvent e) {
+			public void propertyChange(PropertyChangeEvent e) {
 				if (setting) {
 					return;
 				}

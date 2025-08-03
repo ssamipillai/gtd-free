@@ -146,7 +146,7 @@ public class JournalModel {
 	
 	private final String VERSION_1_0 = "1.0"; //$NON-NLS-1$
 	
-	private final static DateFormat JOURNAL_DATE_FORMAT = new SimpleDateFormat("yyyyMMdd"); //$NON-NLS-1$
+	private final static ThreadLocal<DateFormat> JOURNAL_DATE_FORMAT = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyyMMdd")); //$NON-NLS-1$
 	
 	private File dataFolder;
 
@@ -209,7 +209,7 @@ public class JournalModel {
 
 	private File getJournalFile(long day) {
 		Date date = JournalTools.toDate(day);
-		return new File(dataFolder, "journal-" + JOURNAL_DATE_FORMAT.format(date) + ".xml"); //$NON-NLS-1$ //$NON-NLS-2$
+		return new File(dataFolder, "journal-" + JOURNAL_DATE_FORMAT.get().format(date) + ".xml"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 	
 	public List<JournalEntry> load(Long day) throws IOException, XMLStreamException, FactoryConfigurationError {

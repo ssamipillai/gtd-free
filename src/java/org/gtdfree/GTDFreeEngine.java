@@ -480,7 +480,7 @@ public class GTDFreeEngine {
 		support.removePropertyChangeListener(name, l);
 	}
 	
-	public VersionInfo[] checkForNewVersions(VersionInfo current) throws IOException {
+	public VersionInfo[] checkForNewVersions(VersionInfo current) {
 		
 		List<VersionInfo> l= new ArrayList<VersionInfo>(2);
 		URI uri=null;
@@ -494,6 +494,26 @@ public class GTDFreeEngine {
 			try {
 				
 				db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+				
+				// Add error handler to suppress XML parsing errors
+				db.setErrorHandler(new org.xml.sax.ErrorHandler() {
+					@Override
+					public void warning(org.xml.sax.SAXParseException exception) {
+						// Ignore warnings
+					}
+					
+					@Override
+					public void error(org.xml.sax.SAXParseException exception) {
+						Logger.getLogger(GTDFreeEngine.class).debug("XML parsing error during version check: " + exception.getMessage());
+					}
+					
+					@Override
+					public void fatalError(org.xml.sax.SAXParseException exception) throws org.xml.sax.SAXException {
+						Logger.getLogger(GTDFreeEngine.class).debug("Fatal XML parsing error during version check: " + exception.getMessage());
+						// Don't throw - just log and continue
+					}
+				});
+				
 				Document doc= db.parse(uri.toString());
 
 				VersionInfo[] inf= new VersionInfo[2];
@@ -501,6 +521,12 @@ public class GTDFreeEngine {
 				NodeList verL= doc.getElementsByTagName("version"); //$NON-NLS-1$
 				NodeList typL= doc.getElementsByTagName("type"); //$NON-NLS-1$
 				NodeList notL= doc.getElementsByTagName("notes"); //$NON-NLS-1$
+				
+				// Validate that we have the expected elements before accessing them
+				if (verL.getLength() < 2 || typL.getLength() < 2 || notL.getLength() < 2) {
+					logger.debug("Remote version XML format is invalid - missing required elements");
+					return new VersionInfo[0];
+				}
 				
 				inf[0]= new VersionInfo(
 						verL.item(0).getTextContent(),
@@ -523,8 +549,10 @@ public class GTDFreeEngine {
 				
 				return l.toArray(new VersionInfo[l.size()]);
 
+			} catch (org.xml.sax.SAXParseException e) {
+				logger.debug("XML parsing failed during version check - remote XML may be malformed: " + e.getMessage());
 			} catch (Exception e) {
-				logger.error("Internal error.",e); //$NON-NLS-1$
+				logger.debug("Version check failed: " + e.getMessage(), e); //$NON-NLS-1$
 			}
 		}
 		

@@ -47,7 +47,6 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.gtdfree.ApplicationHelper;
 import org.gtdfree.model.Action.ActionType;
@@ -58,6 +57,69 @@ import org.gtdfree.model.Folder.FolderType;
  *
  */
 public final class GTDDataXMLTools {
+
+	/**
+	 * Modern replacement for StringEscapeUtils.unescapeJava()
+	 * Handles basic Java string unescaping for the GTD-Free application.
+	 */
+	private static String unescapeJava(String input) {
+		if (input == null) return null;
+		
+		StringBuilder result = new StringBuilder();
+		boolean escaping = false;
+		
+		for (int i = 0; i < input.length(); i++) {
+			char ch = input.charAt(i);
+			if (escaping) {
+				switch (ch) {
+					case 'n': result.append('\n'); break;
+					case 't': result.append('\t'); break;
+					case 'r': result.append('\r'); break;
+					case 'b': result.append('\b'); break;
+					case 'f': result.append('\f'); break;
+					case '\'': result.append('\''); break;
+					case '"': result.append('"'); break;
+					case '\\': result.append('\\'); break;
+					case 'u':
+						// Handle unicode escape \\uXXXX
+						if (i + 4 < input.length()) {
+							try {
+								String hex = input.substring(i + 1, i + 5);
+								char unicode = (char) Integer.parseInt(hex, 16);
+								result.append(unicode);
+								i += 4; // Skip the 4 hex digits
+							} catch (NumberFormatException e) {
+								result.append(ch); // If invalid, just append the char
+							}
+						} else {
+							result.append(ch);
+						}
+						break;
+					default:
+						result.append(ch);
+				}
+				escaping = false;
+			} else if (ch == '\\') {
+				escaping = true;
+			} else {
+				result.append(ch);
+			}
+		}
+		
+		return result.toString();
+	}
+	
+	/**
+	 * Modern replacement for new URL(String) constructor.
+	 * Uses URI.toURL() which is the recommended approach.
+	 */
+	private static java.net.URL createURL(String spec) throws java.net.MalformedURLException {
+		try {
+			return new java.net.URI(spec).toURL();
+		} catch (java.net.URISyntaxException e) {
+			throw new java.net.MalformedURLException("Invalid URL: " + spec);
+		}
+	}
 
 	public static class DataHeader {
 		public DataHeader(File file, String ver, String mod) {
@@ -181,7 +243,7 @@ public final class GTDDataXMLTools {
 					s= r.getAttributeValue(null, "url"); //$NON-NLS-1$
 					if (s!=null) {
 						try {
-							a.setUrl(new URL(s));
+							a.setUrl(createURL(s));
 						} catch (Exception e) {
 							Logger.getLogger(GTDDataXMLTools.class).debug("Internal error.", e); //$NON-NLS-1$
 						}
@@ -248,7 +310,7 @@ public final class GTDDataXMLTools {
 					s= r.getAttributeValue(null, "url"); //$NON-NLS-1$
 					if (s!=null) {
 						try {
-							a.setUrl(new URL(s));
+							a.setUrl(createURL(s));
 						} catch (Exception e) {
 							Logger.getLogger(GTDDataXMLTools.class).debug("Internal error.", e); //$NON-NLS-1$
 						}
@@ -436,7 +498,6 @@ public final class GTDDataXMLTools {
 					if (d!=null) {
 						d=d.replace("\\n", "\n"); //$NON-NLS-1$ //$NON-NLS-2$
 					}
-	
 					Action a= new Action(i,cr,re,d);
 					
 					s= r.getAttributeValue(null, "type"); //$NON-NLS-1$
@@ -445,7 +506,7 @@ public final class GTDDataXMLTools {
 					s= r.getAttributeValue(null, "url"); //$NON-NLS-1$
 					if (s!=null) {
 						try {
-							a.setUrl(new URL(s));
+							a.setUrl(createURL(s));
 						} catch (Exception e) {
 							Logger.getLogger(GTDDataXMLTools.class).debug("Internal error.", e); //$NON-NLS-1$
 						}
@@ -616,7 +677,7 @@ public final class GTDDataXMLTools {
 				String s= r.getAttributeValue(null, "closed"); //$NON-NLS-1$
 				if (s!=null) ff.setClosed(Boolean.parseBoolean(s));
 				
-				s = StringEscapeUtils.unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
+				s = unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
 				
 				if (!ff.isInBucket()) {
 					ff.setDescription(s);
@@ -645,7 +706,7 @@ public final class GTDDataXMLTools {
 					re= r.getAttributeValue(null, "resolved")==null ? null : new Date(Long.parseLong(r.getAttributeValue(null, "resolved"))); //$NON-NLS-1$ //$NON-NLS-2$
 					mo= r.getAttributeValue(null, "modified")==null ? null : new Date(Long.parseLong(r.getAttributeValue(null, "modified"))); //$NON-NLS-1$ //$NON-NLS-2$
 					
-					String d = StringEscapeUtils.unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
+					String d = unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
 					
 					Action a= new Action(i,cr,re,d,mo);
 					
@@ -655,7 +716,7 @@ public final class GTDDataXMLTools {
 					s= r.getAttributeValue(null, "url"); //$NON-NLS-1$
 					if (s!=null) {
 						try {
-							a.setUrl(new URL(s));
+							a.setUrl(createURL(s));
 						} catch (Exception e) {
 							Logger.getLogger(GTDDataXMLTools.class).debug("Internal error.", e); //$NON-NLS-1$
 						}
@@ -730,7 +791,7 @@ public final class GTDDataXMLTools {
 				pp.setClosed(Boolean.parseBoolean(r.getAttributeValue(null, "closed"))); //$NON-NLS-1$
 				pp.setGoal(r.getAttributeValue(null, "goal")); //$NON-NLS-1$
 				
-				String s = StringEscapeUtils.unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
+				String s = unescapeJava(r.getAttributeValue(null, "description")); //$NON-NLS-1$
 				if (s!=null) {
 					pp.setDescription(s);
 				}

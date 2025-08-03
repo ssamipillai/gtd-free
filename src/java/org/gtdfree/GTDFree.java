@@ -25,7 +25,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
 import java.awt.Dimension;
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
@@ -118,6 +117,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.RollingFileAppender;
 import org.gtdfree.GTDFreeEngine.VersionInfo;
 import org.gtdfree.gui.DatabaseToolsDialog;
@@ -139,6 +139,7 @@ import org.gtdfree.model.GTDDataODB;
 import org.gtdfree.model.GTDDataXML;
 import org.gtdfree.model.GTDModelListener;
 import org.gtdfree.model.Utils;
+
 
 
 /**
@@ -436,8 +437,24 @@ public class GTDFree implements GTDFreeOperations {
 		//ApplicationHelper.changeDefaultFontStyle(Font.BOLD, "Tree");
 		
 		final Logger logger= Logger.getLogger(GTDFree.class);
-		logger.setLevel(Level.ALL);
-		BasicConfigurator.configure();
+		// Set a reasonable default log level for production use
+		logger.setLevel(Level.INFO);
+		
+		// Try to configure from properties file first, fallback to basic configuration
+		try {
+			java.io.InputStream is = GTDFree.class.getClassLoader().getResourceAsStream("log4j.properties");
+			if (is != null) {
+				java.util.Properties props = new java.util.Properties();
+				props.load(is);
+				org.apache.log4j.PropertyConfigurator.configure(props);
+				is.close();
+			} else {
+				BasicConfigurator.configure();
+			}
+		} catch (Exception e) {
+			// Fallback to basic configuration if properties file not found
+			BasicConfigurator.configure();
+		}
 		
 		Options op= new Options();
 		op.addOption("data",true,Messages.getString("GTDFree.Options.data")); //$NON-NLS-1$ //$NON-NLS-2$
@@ -515,7 +532,8 @@ public class GTDFree implements GTDFreeOperations {
 		
 		val= cl.getOptionValue("log"); //$NON-NLS-1$
 		if (val!=null) {
-			Level l= Level.toLevel(val, Level.ALL);
+			Level l= Level.toLevel(val, Level.INFO);
+			Logger.getRootLogger().setLevel(l);
 			logger.setLevel(l);
 		}
 		
@@ -526,21 +544,23 @@ public class GTDFree implements GTDFreeOperations {
 			System.exit(0);
 		}
 		
-		
-		
-		if (!"OFF".equalsIgnoreCase(val)) { //$NON-NLS-1$
+		// Additional file logging only if log level is not OFF and we don't already have file appender
+		if (!"OFF".equalsIgnoreCase(val) && Logger.getRootLogger().getAppender("FILE") == null) { //$NON-NLS-1$
 			RollingFileAppender f=null;
 			try {
 				f = new RollingFileAppender(new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN),ApplicationHelper.getLogFileName(),true);
 				f.setMaxBackupIndex(3);
-				BasicConfigurator.configure(f);
+				f.setName("ADDITIONAL_FILE");
+				Logger.getRootLogger().addAppender(f);
 				f.rollOver();
 			} catch (IOException e2) {
 				logger.error("Logging error.", e2); //$NON-NLS-1$
 			}
 		}
 		logger.info("GTD-Free "+ver+" started."); //$NON-NLS-1$ //$NON-NLS-2$
-		logger.debug("Args: "+Arrays.toString(args)); //$NON-NLS-1$
+		if (logger.isDebugEnabled()) {
+			logger.debug("Args: "+Arrays.toString(args)); //$NON-NLS-1$
+		}
 		logger.info("Using data in: "+ApplicationHelper.getDataFolder()); //$NON-NLS-1$
 
 		if (cl.getOptionValue("exml")!=null || cl.getOptionValue("eodb")!=null) { //$NON-NLS-1$ //$NON-NLS-2$
@@ -631,31 +651,33 @@ public class GTDFree implements GTDFreeOperations {
 			logger.debug("Using locale '"+Locale.getDefault().toString()+"'."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
-		try {
-			//System.setProperty("swing.crossplatformlaf", "com.jgoodies.looks.plastic.PlasticXPLookAndFeel");
-			//System.setProperty("swing.crossplatformlaf", "com.jgoodies.looks.plastic.Plastic3DLookAndFeel");
-			//System.setProperty("swing.crossplatformlaf", "com.jgoodies.looks.plastic.PlasticLookAndFeel");
-			//System.setProperty("swing.crossplatformlaf", "javax.swing.plaf.metal.MetalLookAndFeel");
-			//System.setProperty("swing.crossplatformlaf", "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-			if (System.getProperty("swing.crossplatformlaf")==null) { //$NON-NLS-1$
-				String osName = System.getProperty("os.name"); //$NON-NLS-1$
-				if (osName != null && osName.toLowerCase().indexOf("windows") != -1) { //$NON-NLS-1$
-					UIManager.setLookAndFeel("com.jgoodies.looks.windows.WindowsLookAndFeel"); //$NON-NLS-1$
-				} else {
-					try {
-						// we prefer to use native L&F, many systems support GTK, even if Java thinks it is not supported
-						UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"); //$NON-NLS-1$
-					} catch (Throwable e) {
-						logger.debug("GTK L&F not supported.", e); //$NON-NLS-1$
-						UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					}
-				}
-			}
-		} catch (Throwable e) {
-			logger.warn("Setting L&F failed.", e); //$NON-NLS-1$
-		}
+		// Configure modern Windows Look and Feel
+		ApplicationHelper.configureWindowsLookAndFeel();
 		logger.debug("Using L&F '"+UIManager.getLookAndFeel().getName()+"' by "+UIManager.getLookAndFeel().getClass().getName()); //$NON-NLS-1$ //$NON-NLS-2$
 
+		// Configure modern UI fonts (Gill Sans MT/Segoe UI) for better readability
+		ApplicationHelper.configureModernUIFonts();
+
+		// Initialize performance optimizer for memory and CPU optimization
+		try {
+			org.gtdfree.modernization.PerformanceOptimizer.initialize();
+			logger.info("Performance optimizer initialized - " + org.gtdfree.modernization.PerformanceOptimizer.getMemoryInfo());
+		} catch (Exception e) {
+			logger.warn("Failed to initialize performance optimizer", e);
+		}
+
+		// Add shutdown hook for proper cleanup
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+			try {
+				logger.info("GTD-Free shutdown initiated - cleaning up resources");
+				ApplicationHelper.stopBackgroundExecutor();
+				org.gtdfree.modernization.PerformanceOptimizer.shutdown();
+				logger.info("GTD-Free shutdown completed");
+			} catch (Exception e) {
+				logger.warn("Error during shutdown cleanup", e);
+			}
+		}, "GTD-Free-Shutdown"));
+		
 		try {
 			final GTDFree application = new GTDFree();
 					
@@ -1765,6 +1787,7 @@ public class GTDFree implements GTDFreeOperations {
 			jmi.addActionListener(new ActionListener() {
 				
 				@Override
+			
 				public void actionPerformed(ActionEvent e) {
 					new Thread() {
 						@Override
@@ -1956,20 +1979,16 @@ public class GTDFree implements GTDFreeOperations {
 			saveMenuItem = new JMenuItem();
 			saveMenuItem.setText(Messages.getString("GTDFree.File.Save")); //$NON-NLS-1$
 			saveMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-					Event.CTRL_MASK, true));
+					Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx(), true));
 			saveMenuItem.setIcon(ApplicationHelper.getIcon(ApplicationHelper.icon_name_large_save));
-			saveMenuItem.addActionListener(new ActionListener() {
-			
-				public void actionPerformed(ActionEvent e) {
-					try {
-						getEngine().save();
-						Logger.getLogger(this.getClass()).debug("Save successful."); //$NON-NLS-1$
-					} catch (Exception ex) {
-						Logger.getLogger(this.getClass()).error("Save failed.", ex); //$NON-NLS-1$
-						JOptionPane.showMessageDialog(getJFrame(), "Save failed: '"+ex.getMessage()+"'.", "Save Failed", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-					}
+			saveMenuItem.addActionListener(e -> {
+				try {
+					getEngine().save();
+					Logger.getLogger(this.getClass()).debug("Save successful."); //$NON-NLS-1$
+				} catch (Exception ex) {
+					Logger.getLogger(this.getClass()).error("Save failed.", ex); //$NON-NLS-1$
+					JOptionPane.showMessageDialog(getJFrame(), "Save failed: '"+ex.getMessage()+"'.", "Save Failed", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				}
-			
 			});
 		}
 		return saveMenuItem;
@@ -2128,12 +2147,8 @@ public class GTDFree implements GTDFreeOperations {
 		if (closed) {
 			return;
 		}
-		try {
-			v = getEngine().checkForNewVersions(current);
-		} catch (IOException e1) {
-			logger.error(Messages.getString("GTDFree.CheckFailed"), e1); //$NON-NLS-1$
-			return;
-		}
+		
+		v = getEngine().checkForNewVersions(current);
 		
 		if (closed) {
 			return;
