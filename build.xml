@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GTD-Free" default="jar">
+
+	<property file="src/resources/gtd-free-config.properties"/>
+
+	<property name="dest" value="target/gtd-free"/>
+	<property name="dest.build" value="${dest}/classes"/>
+
+	<condition property="jar" value="gtd-free-${build.version}.jar" else="gtd-free-${build.version}-${build.type}.jar">
+		<isset property="build.type"/>
+	</condition>
+
+	<fileset id="lib" dir="lib">
+		<include name="looks-2.3.1.jar"/>
+		<include name="commons-lang-2.4.jar"/>
+		<include name="commons-cli-1.2.jar"/>
+		<include name="iText-2.1.7.jar"/>
+		<include name="neodatis-odb-1.9.23.676.jar"/>
+		<include name="log4j-1.2.15.jar"/>
+		<include name="pdf-renderer.jar"/>
+		<include name="jcalendar-0.8.1.jar"/>
+	</fileset>
+
+	<target name="jar">
+		<delete dir="${dest}"/>
+		<delete file="${jar}"/>
+		
+		<unzip dest="${dest.build}">
+			<fileset refid="lib"/>
+		</unzip>
+		
+		<delete dir="${dest.build}/META-INF"/>
+		
+		<copy todir="${dest.build}">
+			<fileset dir="src/java" includes="de/wannawork/jcalendar/*.properties"/>
+			<fileset dir="src/java" includes="org/gtdfree/*.properties"/>
+			<fileset dir="src/resources" includes="**/*"/>
+			<fileset file="src/example/gtd-free-example.xml"/>
+		</copy>
+		
+		<!--javac 
+        	destdir="${dest.build}"
+			encoding="utf-8"
+			debug="on"
+			target="1.6"
+			source="1.6">
+			<src path="../PDFRenderer/src"/>
+			<classpath path="${dest.build}"/>
+		</javac>
+
+		<javac 
+        	destdir="${dest.build}"
+			encoding="utf-8"
+			debug="on"
+			target="1.6"
+			source="1.6">
+			<src path="../PDFRenderer/demos/viewer"/>
+			<classpath path="${dest.build}"/>
+		</javac-->
+
+		<javac 
+        	destdir="${dest.build}"
+			encoding="utf-8"
+        	debug="on"
+			target="1.6"
+			source="1.6">
+			<src path="src/java"/>
+			<classpath path="${dest.build}"/>
+		</javac>
+		
+		<jar destfile="${jar}" basedir="${dest.build}" compress="true">
+			<manifest>
+				<attribute name="Built-By" value="Ike"/>
+				<attribute name="Build-Version" value="${build.version}"/>
+				<attribute name="Build-Type" value="${build.type}"/>
+				<attribute name="Main-Class" value="org.gtdfree.GTDFree"/>
+			</manifest>
+		</jar>
+	</target>
+	
+</project>

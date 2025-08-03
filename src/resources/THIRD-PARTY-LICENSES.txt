@@ -1,0 +1,25 @@
+GTD project uses following third-party libraries.
+
+Library: JCalendar
+Copyright: Bodo Tasche
+License: BSD
+Modified: yes
+Home: http://sourceforge.net/projects/jcalendar/
+
+Library: Human and Gnome icons from Ubuntu distribution
+Copyright: Canonical Ltd.
+License: GNU GPL
+Modified: yes
+Home: http://www.ubuntu.com
+
+Library: JGoodies Looks
+Copyright: 2001-2007 JGoodies Karsten Lentzsch
+License: BSD
+Modified: no
+Home: http://www.jgoodies.com
+
+Library: Apache Commons
+Copyright: 2001-2008 The Apache Software Foundation
+License: Apache License 2.0
+Modified: no
+Home: http://commons.apache.org/

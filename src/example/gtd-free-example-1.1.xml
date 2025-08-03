@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><gtd-data version="2.1" modified="2008-10-10T12:42:55.905+0200">
+
+<lists>
+  <list id="1" name="GTD-Free Tips" type="ACTION" closed="false" description="This is list of actions, which can serve as short help, tips or tutorial. \n">
+    <action id="7" created="1219497103421" resolution="OPEN" description="Feedback is appreciated.   \n\nYour opinion is valuable contribution to GTD-Free project. \nIt helps make it a better tool for everyone.\n\n* Post questions or ideas about improvements or new features to the forum [https://sourceforge.net/forum/forum.php?forum_id=859533] or to me (see link in URL field).\n\n* Report bugs and similar to the Tracker as SF.net [https://sourceforge.net/tracker/?group_id=219074]." url="mailto:ikesan@users.sourceforge.net" priority="None"></action>
+    <action id="6" created="1219496298193" resolution="OPEN" description="How to create new project?   \n\nThere are three ways:\n\n1) Make project same way as a list, see tip &quot;How to create new list?&quot;. \n\n2) In &quot;Selected Action&quot; editor: \n\n* Select an action in the table in Process, Organize/Review or Execute tab. \n* In &quot;Selected Action&quot; section on right start typing project name in &quot;Project:&quot; field.\n* When done press &lt;Enter&gt; and project is created.\n\n3) In table with actions:\n\n* Select an action in the table in Process, Organize/Review or Execute tab. \n* Click on cell in &quot;Project&quot; column and start typing project name.\n* When done press &lt;Enter&gt; and project is created.\n" priority="None"></action>
+    <action id="5" created="1215368682748" resolution="OPEN" description="How to create new list?   \n\n* Go to &quot;Process&quot; or &quot;Organize/Review&quot; tab.\n* In &quot;Lists&quot; on left click on one of the categories: Actions, Someday/Maybe or References.\n* Unfold &quot;Edit&quot; at bottom of tree.\n* Type in the name of the list.\n* Press &quot;Add&quot; button.\n* Click on new list in tree and edit description.\n\nThis way is also possible to make new Project, just select Projects category.\n" priority="None"></action>
+    <action id="4" created="1214828898158" resolution="OPEN" resolved="1215368471662" description="How to make &quot;new line&quot; in collect text?   \n\nUse keys &lt;Shift&gt;+&lt;Enter&gt; to insert new line into text, when entering test in &quot;collect&quot; tab or &quot;Quick Collect&quot; bar.\n" priority="None"></action>
+    <action id="3" created="1214828662647" resolution="OPEN" resolved="1215368471662" description="How to enter new action?   \n\n1) Enter trough &quot;Collect&quot; tab.\n\n* Open &quot;Collect&quot; tab.\n* Type in your task, action or information. Anything that might be an &quot;open loop&quot; in your mind.\n* You can also drag&amp;drop or paste pieces of text from other applications.\n* Press &quot;Add&quot; button or...\n* Press &lt;Enter&gt; key and item is stored and an unique ID is assigned to it.\n* You can immediately start typing new item and press &lt;Enter&gt; again and so forth.\n\n2) Enter trough &quot;Quick Collect&quot; bar.\n\n* This bar is located at bottom of application window. If not there go to menu View and make a check mark on &quot;Show Quick Collect Bar&quot;.\n* You enter your task similar as above." priority="None"></action>
+    <action id="2" created="1206393163439" resolution="OPEN" resolved="1215368471663" description="A little bit about GTD and GTD-Free.    \n\nGTD-Free is designed for users following GTD (Getting Things Done) principles. \nTo make best use of GTD-Free it is recommended that get familiar with the GTD principles. \nRead the book or see at least [http://en.wikipedia.org/wiki/Getting_Things_Done] or [http://www.davidco.com/].\n\nGTD-Free helps you to organize your work-flow according to five-stage method by GTD principles:\n\n* COLLECT all the things in you professional and private life that hold you attention,\n* PROCESS all collected items and decide right away how to queue them,\n* ORGANIZE collected item so they are easy accessible when needed,\n* REVIEW items regularly and\n* DO the items.\n\nThis is conveniently supported in GTD-Free tabs visible in main window:\n* Collect tab.\n* Process tab.\n* Organize/Review tab.\n* Execute tab.\n\nEach tab is organized in way to best serve particular stage in work-flow.\n\nThere is additional tab &quot;Overview&quot;, which serves as sort of starting place for GTD-Free." url="http://gtd-free.sourceforge.net/" priority="None"></action>
+    <action id="1" created="1206392675105" resolution="OPEN" resolved="1215368471663" description="START HERE.     \n\nThis tutorial is in form of GTD-Free actions. \nYou can read one at the time or read them all. \nThis tutorial is still in development.\n\nThey are not real actions, more like pieces of information. \nThey have to be dealt with and moved out of the way as soon as possible.\n\nIf you have read actions and want to keep them for future reference, then move them to &quot;References/GTD-Free Tips&quot; list.\nIf you want to deal with them later, them move them to some list in &quot;Someday/Maybe&quot; section.\nOr simply resolve them.\n\nYou can do moving by drag and drop operation from table to tree in Organize tab. \n\nWhen you are done you can close the &quot;GTD-Free Tutorial&quot; list altogether. " url="http://gtd-free.sourceforge.net/" priority="High"></action>
+  </list>
+  <list id="3" name="Music" type="SOMEDAY" closed="false" description="CDs or MP3s you may want to hear or buy.">
+  </list>
+  <list id="4" name="Movies" type="SOMEDAY" closed="false" description="Movies you may want to see.">
+  </list>
+  <list id="5" name="Books" type="SOMEDAY" closed="false" description="Books you may want to read.">
+    <action id="8" created="1219497972529" resolution="OPEN" description="Getting Things Done: The Art of Stress-Free Productivity by David Allen" priority="None"></action>
+  </list>
+  <list id="6" name="Places" type="SOMEDAY" closed="false" description="Places you may want to visit.">
+  </list>
+  <list id="7" name="Calls" type="ACTION" closed="false" description="List of all the phone calls you need to make.">
+  </list>
+  <list id="8" name="At Computer" type="ACTION" closed="false" description="Tasks which need to be done with computer. \nIt could be useful to further divide in &quot;At Computer- On-line&quot; or &quot;At Computer- Off-line&quot;.">
+  </list>
+  <list id="9" name="Errands" type="ACTION" closed="false" description="List of actions, for which you need to get somewhere to do them.\nIt could be useful to define further lists: &quot;Errands-Home Town&quot; or &quot;Errands-Hardware Store&quot;. ">
+  </list>
+  <list id="10" name="At Office" type="ACTION" closed="false" description="Lists of actions that an be done only when you are in an office.">
+  </list>
+  <list id="11" name="At Home" type="ACTION" closed="false">
+  </list>
+  <list id="12" name="Agendas" type="ACTION" closed="false" description="List of actions, which need to be solved in real-time interaction with someone or brougth up at a meeting.\nIf you have a lot interactions it may be wise to split into further separate lists for different persons/occasions.">
+  </list>
+  <list id="13" name="Read/Review" type="ACTION" closed="false" description="This is list of things that you seriously need or want to read. Otherwise use Someday/Maybe.">
+  </list>
+  <list id="14" name="Waiting For" type="ACTION" closed="false" description="List of reminders of this actions, for which you are waiting to be done or to be replied by someone else.">
+  </list>
+  <list id="15" name="Hobbies" type="SOMEDAY" closed="false" description="Ideas for your hobbies.">
+  </list>
+  <list id="17" name="Web Sites" type="SOMEDAY" closed="false" description="Web sites you may want to check.">
+  </list>
+  <list id="16" name="Events" type="SOMEDAY" closed="false" description="Various events you may want to attend.">
+  </list>
+  <list id="19" name="GTD-Free Tips" type="REFERENCE" closed="false" description="List with references to GTD-Free tips.">
+  </list>
+  <list id="18" name="Gift Ideas" type="SOMEDAY" closed="false" description="Various ideas what gifts to buy.">
+  </list>
+  <list id="-3" name="In-Bucket" type="INBUCKET" closed="false">
+  </list>
+</lists>
+<projects>
+  <project id="2" name="Next Vacation" closed="false" actions=""></project>
+</projects>
+<queue id="-4" name="Next Actions" actions=""></queue>
+</gtd-data>

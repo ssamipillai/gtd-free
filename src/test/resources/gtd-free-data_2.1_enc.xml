@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?><gtd-data version="2.1" modified="2008-10-13T00:00:54.301+0200">
+
+<lists>
+  <list id="1" name="Reading" type="REFERENCE" closed="false">
+    <action id="0" created="1204489077516" resolution="OPEN" resolved="1215282746135" description="to knjigo so Marku priporocili v NI in je res kul. Clanek avtorja o knjigi:\nhttp://www.fastcompany.com/magazine/51/goodtogreat.html\nClanek se splaca prebrati.\n\nCe koga zanima vec, je celotna knjiga kot Audio book na:\nhttp://users.cosylab.com/~iverstovsek/library/GTG.zip\n5 CD-jev, to lahko poslusate v avtu ali pred spanjem, ipd. Edino ni cisto vse - zadnjih par mp3-jev je malo pomanjkljivih, manjka po mojem ene 5 strani knjige, a ne vpliva na vsebino. " priority="None"></action>
+  </list>
+  <list id="2" name="@Ike-Home" type="ACTION" closed="false">
+    <action id="3" created="1204489077519" resolution="OPEN" resolved="1215282746136" description="preglej racune iz ostalo krammo od doma" priority="None"></action>
+    <action id="2" created="1204489077519" resolution="OPEN" resolved="1215282746136" description="ali bi olga kaj poslala v D?" priority="None"></action>
+    <action id="1" created="1204489077519" resolution="OPEN" resolved="1215282746136" description="prenesi kamero na racunalnik" priority="None"></action>
+  </list>
+  <list id="3" name="Avto" type="REFERENCE" closed="false">
+    <action id="4" created="1204489077520" resolution="OPEN" resolved="1215282746136" description="platisca 307sw\n* zimska: 195 65 15\n* lita: 205 55 16" priority="None"></action>
+  </list>
+  <list id="4" name="@Ike-Agendas" type="ACTION" closed="false">
+    <action id="14" created="1204489077526" resolution="OPEN" resolved="1215282746137" description="vprasaj fotra kako priti do neobjavljenih stevilk" priority="None"></action>
+    <action id="13" created="1204489077525" resolution="RESOVED" resolved="1215282746137" description="Primoz: kako se gradi bajto?" priority="None"></action>
+    <action id="12" created="1204489077525" resolution="TRASHED" resolved="1215282746137" description="Erhard: ANKA-LOCO:  \n\nPrednosti novih: \n-higher integration: 16 output channel in only 2U high 19&quot; rackmount case \n-serial RS485 communication with current measurement data \n-can measure lower currents; 100pA vs 100nA \n-GUI available in JAVA: serial communication supported by microIOC-RS485 \n-hi/low current/vacuum limits configurable \n-pressure determined from tables (fully configurable for each channel)  \n\nKer razvijamo nov LOCO, bi bilo dobro izvedeti se: \n1) Ali bi rabili odklaplanje po kanalih? \n2) Ali bi zeli imeti imeti znotraj locota ze dual controller? 3) Koliko kanalov bi rabili na locotu. \n4) Kaksna je konfiguracija njihovega vakumskega sistema  (koliko pump, kako velike, kako porazdeljene po sektorjih in rackih) \n5) Ali poznajo kakasno podobno  resitev kot je LOCO \n6) Zakaj ne bi vzeli LOCOta in kaj bi bilo treba spremeniti, da se premislijo." priority="None"></action>
+    <action id="11" created="1204489077524" resolution="TRASHED" resolved="1215282746138" description="kontaktiraj sepolda:\n(2008-01-16 12:37:11) odpadnik: kaj mu recem, ce ga dobim? \n(2008-01-16 12:37:21) miha_pelko: samo kaj so naslednji koraki \n(2008-01-16 12:37:32) odpadnik: vprasam, kaj so naslednji koraki? \n(2008-01-16 12:37:36) miha_pelko: da nam je Wolfgang reku da je show on \n(2008-01-16 12:37:57) miha_pelko: in da nam je bilo receno, da nas on kontaktira Januarja" priority="None"></action>
+    <action id="10" created="1204489077524" resolution="OPEN" resolved="1215282746138" description="Rok: delnice državne Pozavarovalnice Sava" priority="None"></action>
+    <action id="9" created="1204489077524" resolution="TRASHED" resolved="1215282746138" description="Igor: kako obracunati nadure. Kako obraunati cas prebit na potovanju. Ce v enem mesecu znese cas na potavanju in nadurah toliko da pokrije nekajkratne odsotnosti, alli moram potem kaj pisat nadure ali odstnost?" priority="None"></action>
+    <action id="8" created="1204489077523" resolution="TRASHED" resolved="1215282746138" description="kriznarji: poraba elektrike je padla skoraj za 50% od 2006 do 2007" priority="None"></action>
+    <action id="7" created="1204489077522" resolution="TRASHED" resolved="1215282746139" description="igor: smo to res hoteli, poslji stroske" priority="None"></action>
+    <action id="6" created="1204489077521" resolution="OPEN" resolved="1215282746139" description="olga: ali bi prevzela celotno operacijo: prevzemanje, odpravljanje, denar, dopisovanje, etc, koliko bi hotela" priority="None"></action>
+    <action id="5" created="1204489077521" resolution="OPEN" resolved="1215282746139" description="rok \nV8: katere vse opcije trzenja bi prisle v postev? olga vse prevzame ali olga prevzame samo moje delo? pisi roku predlog" priority="None"></action>
+  </list>
+  <list id="5" name="@CSL-Sales" type="ACTION" closed="false">
+    <action id="113" created="1204489077611" resolution="OPEN" resolved="1215282746139" description="reinhard: desy nsm: zaposlili smo jakata, rabimo delo, lahko pomaga?" priority="None"></action>
+    <action id="114" created="1204489077611" resolution="OPEN" resolved="1215282746140" description="reinhard: povem zakaj je fw nki koristil, mogoce bi tudi njemu, ali tudi on vidi kako korist, " priority="None"></action>
+    <action id="387" created="1204706604727" resolution="RESOVED" resolved="1215282746140" description="" project="26" priority="None"></action>
+    <action id="408" created="1204806459016" resolution="OPEN" resolved="1215282746140" description="spravi nase SW projekte na internet stran, napisemo reference book za high-level software" priority="None"></action>
+    <action id="409" created="1204807161692" resolution="OPEN" resolved="1215282746140" description="loco: mail: Re: prodaj LOCO DESYju" priority="None"></action>
+    <action id="386" created="1204706589080" resolution="OPEN" resolved="1215282746140" description="obiskci torstna" priority="None"></action>
+    <action id="392" created="1204706961111" resolution="OPEN" resolved="1215282746140" description="markov mail: prodaj LOCO DESYju" priority="None"></action>
+    <action id="378" created="1204623083942" resolution="OPEN" resolved="1215282746141" description="erhardov odgovor po konkretnih nalogah obrnem v naso iztocnico" priority="None"></action>
+    <action id="368" created="1204542445805" resolution="OPEN" resolved="1215282746141" description="uwe: povej, koliko dela bi bilo za motor ali cel beamline, dobi skkupaj s sefom in predebatiraj" priority="None"></action>
+    <action id="365" created="1204541454290" resolution="OPEN" resolved="1215282746141" description="FNAL Andrey: sporoci za DAL, ping za delo" project="29" priority="None"></action>
+    <action id="46" created="1204489077566" resolution="TRASHED" resolved="1215282746141" description="DESY: send Keil mail" priority="None"></action>
+    <action id="45" created="1204489077566" resolution="TRASHED" resolved="1215282746141" description="SNS: updejtajTanga" priority="None"></action>
+    <action id="44" created="1204489077565" resolution="TRASHED" resolved="1215282746142" description="ANKA: offer ticket: Microtron power attenuator with 0-10 volts control, uioc or zeus?, prepare estimates" priority="None"></action>
+    <action id="43" created="1204489077565" resolution="TRASHED" resolved="1215282746142" description="ANKA: lista taskov za NSM" priority="None"></action>
+    <action id="42" created="1204489077559" resolution="RESOVED" resolved="1215282746142" description="ANKA-SNM: todo lista" priority="None"></action>
+    <action id="41" created="1204489077545" resolution="TRASHED" resolved="1215282746142" description="mail to erhard" priority="None"></action>
+    <action id="40" created="1204489077545" resolution="TRASHED" resolved="1215282746142" description="reply cluasnu glede racunov od Seksija" priority="None"></action>
+    <action id="39" created="1204489077545" resolution="TRASHED" resolved="1215282746143" description="spomni bacherja da se je treba odlocit" priority="None"></action>
+    <action id="38" created="1204489077544" resolution="TRASHED" resolved="1215282746144" description="kar precej enih zadev se je nabralo zate, pa upam, da ti tole prav pride. Nastevam, kar vem, gotovo je se veliko ostalih zadev.\n\n- DESY FLASH: zastavi projekt, razdeli naloge -- daj povej do kdaj bos to, verjetno do zacetka naslednjega tedna?\n\n- ANKA leadi v pipeline -- da lahko potem jaz (oz. kdo drug) to vzame od tebe. Rok: danes.\n\n- DESY Apps 2 / 3 : pazi, da Jaka ne ostane brez dela, ti pa ga bos imel prevec.\n\n- Albert Horvat in Rok Bertoncelj: Zagar pravi, da si se (se bos?) dobil z njima in jima dal naloge. Kaksno je stanje? Ce naj bosta koristna se moras obvezno dobiti z njima cimprej -- to je sigurno nalozba v manj panike cez kak mesec, dva. Kar doloci datum, kdaj prideta na prvo rundo nalog.\n\nIz kolegija:\n\n- SNS Akcija: Ike klice Johnnyja Tanga ta teden.\n- EPAC: Akcija: Ike poskrbi da DESY doda Tilna kot soavtorja na Flash\nclanku. Ta teden.\n- CVS SVN: Kos prenasa testne projekte. Ike predlaga resitev za Java\ncommon projekte in se uskladi z Zagarjem in Kaduncem.\n" remind="1199443848130" priority="None"></action>
+    <action id="37" created="1204489077539" resolution="TRASHED" resolved="1215282746144" description="klici changa" priority="None"></action>
+    <action id="36" created="1204489077538" resolution="TRASHED" resolved="1215282746144" description="poslji erhardu plc mail" priority="None"></action>
+    <action id="35" created="1204489077537" resolution="TRASHED" resolved="1215282746145" description="ANKA-NSM: prepare offer for Wolfgang, get input from Miha and Gasper" remind="1202724905842" priority="None"></action>
+    <action id="34" created="1204489077533" resolution="TRASHED" resolved="1215282746145" description="Erhard: ko pises o BBA vkkljuci vprasanje glede taskov" priority="None"></action>
+    <action id="33" created="1204489077532" resolution="TRASHED" resolved="1215282746145" description="pozanimaj se za uioc and ID leads v DESY, preveri na netu in pri Reinhardu" priority="None"></action>
+    <action id="32" created="1204489077532" resolution="TRASHED" resolved="1215282746145" description="ANKA; send references to Wolfgang" priority="None"></action>
+    <action id="31" created="1204489077531" resolution="TRASHED" resolved="1215282746145" description="pisi Mattu neobvezno in prijazno" priority="None"></action>
+    <action id="30" created="1204489077531" resolution="TRASHED" resolved="1215282746146" description="Seznam Sales leadov za Roka" priority="None"></action>
+    <action id="29" created="1204489077531" resolution="OPEN" resolved="1215282746146" description="Clausen: specificiraj nove taske za DAL in SDS" priority="None"></action>
+    <action id="28" created="1204489077530" resolution="TRASHED" resolved="1215282746146" description="seznam pipelinov za desy, poslji roku in ostalim" priority="None"></action>
+    <action id="25" created="1204489077530" resolution="OPEN" resolved="1215282746146" description="Dobi se z Uwetom in ga dobro sprasaj" priority="None"></action>
+    <action id="23" created="1204489077529" resolution="TRASHED" resolved="1215282746146" description="DESY NSM: kaj je minimalno z nase strani, kaj lahko ponudimo bacherju" priority="None"></action>
+    <action id="22" created="1204489077528" resolution="TRASHED" resolved="1215282746147" description="ANKA NSM:  ping Hagelstein, ping Wolfgang" priority="None"></action>
+    <action id="19" created="1204489077528" resolution="OPEN" resolved="1215282746147" description="desy lead: stefan simrock, vprasaj reinharda ce lahko navezem kontakt" priority="None"></action>
+    <action id="15" created="1204489077527" resolution="TRASHED" resolved="1215282746147" description="CAS: pripravi izjavo do ponedeljak, nato na stran in tezit clausnu" priority="None"></action>
+  </list>
+  <list id="6" name="@CSL-Reminders" type="ACTION" closed="false">
+    <action id="402" created="1204725003389" resolution="TRASHED" resolved="1215282746147" description="meet clausen friday 11:00 for CSS" remind="1204890899824" priority="None"></action>
+    <action id="397" created="1204718486998" resolution="TRASHED" resolved="1215282746148" description="kupi DB zug ali pa splaniraj hotel v Ka" priority="None"></action>
+    <action id="93" created="1204489077589" resolution="OPEN" resolved="1215282746148" description="FNAL-DAL: Zapri Anredys DAL" priority="None"></action>
+    <action id="51" created="1204489077569" resolution="OPEN" resolved="1215282746148" description="albert horvat, fizik, bo frej poleti" remind="1212342248438" priority="None"></action>
+    <action id="50" created="1204489077568" resolution="TRASHED" resolved="1215282746148" description="racunalnik za mitjo" priority="None"></action>
+    <action id="49" created="1204489077568" resolution="OPEN" resolved="1215282746149" description="Igor: placilna politika: dodatek se racuna na podlagi projektne nagrade, izplacuje se podobno kot zdaj. Na pol leta ali leto se naredi poracun, koliko je bilo v prejsnjem obdobju zasluzeno prek nagrad in koliko izplacil. Na podlagi tega se popravi variabilni del, ki se nato izplacuje do naslednejga obdobja, prehod v visji razred bi pomenil visji osnovni del. Sistem bi imel popravke za primere, ko razvijalec ni odgovoren, da je projekt podcenjen. Recimo projekt ima vedno realne ocene v CPM tudi ce je bilo jasno, da smo se nalasc prodali pod ceno. Ali cena naggrade na uro je uzakonjena na neko najnizjo raven. Ali interni projekti imajo v naprej dolocne budget in nagrado na uro.\n\nPoslji mail s predlogom igorju" priority="None"></action>
+    <action id="48" created="1204489077568" resolution="TRASHED" resolved="1215282746149" description="Ali se pprijavimo na Javni razpis za sofinanciranje projektov odprte kode" priority="None"></action>
+    <action id="47" created="1204489077568" resolution="OPEN" resolved="1215282746149" description="ANKA: preveri ali smo res tako slabi kto pravi Wolfi" priority="None"></action>
+  </list>
+  <list id="7" name="Music" type="REFERENCE" closed="false">
+    <action id="52" created="1204489077570" resolution="OPEN" resolved="1215282746149" description="shitdisko, datarock" priority="None"></action>
+  </list>
+  <list id="8" name="@TODAY" type="ACTION" closed="false">
+    <action id="390" created="1204706884754" resolution="TRASHED" resolved="1215282746150" description="check Jaka's ticket for ticks: https://rt.cosylab.com/rt3/Ticket/Display.html?id=40564" project="28" priority="None"></action>
+    <action id="435" created="1205253712733" resolution="TRASHED" resolved="1215282746150" description="dokoncaj cosydist, rok lahko releasa site" priority="None"></action>
+    <action id="434" created="1205253597018" resolution="TRASHED" resolved="1215282746150" description="report glede bacherja" priority="None"></action>
+    <action id="436" created="1205253720685" resolution="OPEN" resolved="1215282746150" description="porocilo glede Torstena za diplomo" priority="None"></action>
+    <action id="427" created="1205160066284" resolution="TRASHED" resolved="1215282746150" description="pripravi demo za Torstena" priority="None"></action>
+    <action id="429" created="1205166481452" resolution="TRASHED" resolved="1215282746150" description="check if you can show OC" priority="None"></action>
+    <action id="431" created="1205166493892" resolution="TRASHED" resolved="1215282746151" description="prepare DESY2008 project report" priority="None"></action>
+    <action id="430" created="1205166486548" resolution="TRASHED" resolved="1215282746151" description="prepare for NSM talk" priority="None"></action>
+    <action id="432" created="1205166523884" resolution="TRASHED" resolved="1215282746151" description="ping Uwe with document from PEter" priority="None"></action>
+    <action id="424" created="1205149663540" resolution="TRASHED" resolved="1215282746151" description="klici torstna za sestanek, na sestanek prinesi prototype" priority="None"></action>
+    <action id="423" created="1205149572780" resolution="TRASHED" resolved="1215282746151" description="obisci Andreasa" priority="None"></action>
+    <action id="80" created="1204489077587" resolution="TRASHED" resolved="1215282746152" description="DESY: investigate multicast problem, phil wants to send multicast wihout persisten adress or something" priority="None"></action>
+    <action id="425" created="1205149680292" resolution="TRASHED" resolved="1215282746152" description="stestiraj OC" priority="None"></action>
+    <action id="422" created="1205149556828" resolution="TRASHED" resolved="1215282746179" description="pripravi tocke za NSM pogovor" priority="None"></action>
+    <action id="411" created="1204809148976" resolution="OPEN" resolved="1215282746180" description="naredi plan, koga moras e popingat: loco, torsten, uni tipi od uweta" priority="None"></action>
+    <action id="418" created="1205145288607" resolution="TRASHED" resolved="1215282746180" description="jaku zmankuje dela" priority="None"></action>
+    <action id="404" created="1204805309160" resolution="RESOVED" resolved="1215282746180" description="preveri release, sporoci v desy" project="28" priority="None"></action>
+    <action id="380" created="1204626807396" resolution="TRASHED" resolved="1215282746180" description="pripravi vprasanja za jana in clausna glede SDS do cetrtka" priority="None"></action>
+    <action id="398" created="1204719346811" resolution="TRASHED" resolved="1215282746180" description="call cerf after 14:00" priority="None"></action>
+    <action id="21" created="1204489077528" resolution="TRASHED" resolved="1215282746180" description="desy nsm: nasa ponudba" priority="None"></action>
+    <action id="20" created="1204489077528" resolution="TRASHED" resolved="1215282746181" description="ANKA nasm: klici hagelsteeina in wolfganga, stevilke HG: 6186\n01755-849 301" priority="None"></action>
+    <action id="18" created="1204489077528" resolution="TRASHED" resolved="1215282746181" description="CSS: mathias: ijs je 12.2. poslal attacment 6" priority="None"></action>
+    <action id="16" created="1204489077527" resolution="TRASHED" resolved="1215282746181" description="CSS: sporoci glede studentov in popingaj glede statusa" priority="None"></action>
+    <action id="17" created="1204489077528" resolution="TRASHED" resolved="1215282746181" description="CAS: sporoci Mathiasu ko je stran gotova" priority="None"></action>
+    <action id="26" created="1204489077530" resolution="TRASHED" resolved="1215282746181" description="desy: pripravi nsm paket za bacherja" priority="None"></action>
+    <action id="24" created="1204489077530" resolution="TRASHED" resolved="1215282746182" description="kail: popingaj da si tu" priority="None"></action>
+    <action id="27" created="1204489077530" resolution="TRASHED" resolved="1215282746182" description="anka wolfgang: pri naslednjem pingu uporabi Primoza" priority="None"></action>
+    <action id="373" created="1204547536914" resolution="TRASHED" resolved="1215282746182" description="clausne: studenjte aprial" priority="None"></action>
+    <action id="379" created="1204626643422" resolution="TRASHED" resolved="1215282746182" description="preveri jca stran in sporoci clausnu glede studentov" priority="None"></action>
+    <action id="394" created="1204707594625" resolution="TRASHED" resolved="1215282746182" description="clausnu odgovori za cas site in studente" priority="None"></action>
+    <action id="384" created="1204634700044" resolution="TRASHED" resolved="1215282746182" description="number filed problem od anreya, today!" priority="None"></action>
+    <action id="388" created="1204706612231" resolution="TRASHED" resolved="1215282746183" description="anka: klici hagelsteina in wolfganga" priority="None"></action>
+    <action id="374" created="1204562992928" resolution="TRASHED" resolved="1215282746183" description="dokoncaj abs plug in sim plug" priority="None"></action>
+    <action id="366" created="1204541461282" resolution="TRASHED" resolved="1215282746183" description="izjava o community supportu za Clausna, poslji seksiju" project="29" priority="None"></action>
+    <action id="90" created="1204489077588" resolution="TRASHED" resolved="1215282746183" description="FNAL-DAL: Popravi stalo, ki jo je naredil Jaka v DAL" priority="None"></action>
+    <action id="370" created="1204545930858" resolution="TRASHED" resolved="1215282746183" description="pripare offer for reinhard, initiate nsm talk" project="29" priority="None"></action>
+    <action id="72" created="1204489077582" resolution="TRASHED" resolved="1215282746184" description="Klici Torstena ali se prikazi v pisarni" priority="None"></action>
+    <action id="71" created="1204489077581" resolution="TRASHED" resolved="1215282746184" description="Torsten: kako je stanje z serverjem za machine model" priority="None"></action>
+    <action id="70" created="1204489077581" resolution="TRASHED" resolved="1215282746184" description="FLASH: check Jernejs work" priority="None"></action>
+    <action id="69" created="1204489077580" resolution="TRASHED" resolved="1215282746184" description="FLASH: check classes from TIlen" priority="None"></action>
+    <action id="68" created="1204489077580" resolution="TRASHED" resolved="1215282746184" description="DESY: preglej AlV" priority="None"></action>
+    <action id="67" created="1204489077580" resolution="TRASHED" resolved="1215282746185" description="DESY: testiraj aplikacije" priority="None"></action>
+    <action id="66" created="1204489077579" resolution="TRASHED" resolved="1215282746185" description="comments from Mark" priority="None"></action>
+    <action id="65" created="1204489077578" resolution="TRASHED" resolved="1215282746185" description="flash: eduard report" priority="None"></action>
+    <action id="64" created="1204489077578" resolution="TRASHED" resolved="1215282746185" description="DESY: uwe report" priority="None"></action>
+    <action id="63" created="1204489077577" resolution="TRASHED" resolved="1215282746185" description="DESY: clausen report, poizvej za ijs, sporoci kdaj bodo studenjte na voljo" priority="None"></action>
+    <action id="62" created="1204489077576" resolution="TRASHED" resolved="1215282746185" description="Bacher: uredi z Bacherjem uradni offer" priority="None"></action>
+    <action id="61" created="1204489077575" resolution="TRASHED" resolved="1215282746186" description="FLASH: CSengine mora brati imena iz config fajlov" priority="None"></action>
+    <action id="60" created="1204489077574" resolution="TRASHED" resolved="1215282746186" description="DESY: dobi za jaka traceviewr fajle" priority="None"></action>
+    <action id="58" created="1204489077574" resolution="TRASHED" resolved="1215282746186" description="TANGO-CSS: can delegate DAL to Jaka?" priority="None"></action>
+    <action id="57" created="1204489077574" resolution="TRASHED" resolved="1215282746190" description="TANGO-CSS: make document outline" priority="None"></action>
+    <action id="56" created="1204489077573" resolution="TRASHED" resolved="1215282746190" description="DESY: update specs with marks pictures" priority="None"></action>
+    <action id="55" created="1204489077573" resolution="TRASHED" resolved="1215282746190" description="DESY: testiraj AlV, komentarji Marka: ne rabimo alternative viewerja, barva mora pokazat trenutno stanje alarmov" priority="None"></action>
+    <action id="54" created="1204489077572" resolution="TRASHED" resolved="1215282746191" description="DESY: can we make release on friday? test apps" priority="None"></action>
+    <action id="53" created="1204489077572" resolution="TRASHED" resolved="1215282746191" description="FLASH: status check, switch notify" priority="None"></action>
+  </list>
+  <list id="9" name="@Ike-S4" type="ACTION" closed="false">
+    <action id="78" created="1204489077585" resolution="OPEN" resolved="1215282746191" description="poflikaj steno do konca" priority="None"></action>
+    <action id="77" created="1204489077585" resolution="OPEN" resolved="1215282746191" description="poisci ocala za plavanje" priority="None"></action>
+    <action id="76" created="1204489077585" resolution="TRASHED" resolved="1215282746191" description="zalij roze" priority="None"></action>
+    <action id="75" created="1204489077584" resolution="TRASHED" resolved="1215282746191" description="pospravi shrambo" priority="None"></action>
+    <action id="74" created="1204489077584" resolution="TRASHED" resolved="1215282746192" description="pocisti stranisce" priority="None"></action>
+    <action id="73" created="1204489077584" resolution="OPEN" resolved="1215282746192" description="daj klesce z orodjem v avto" priority="None"></action>
+  </list>
+  <list id="10" name="@CSL-Projects" type="ACTION" closed="false">
+    <action id="438" created="1205323619998" resolution="OPEN" resolved="1215282746192" description="check Jaka's ticket for ticks: https://rt.cosylab.com/rt3/Ticket/Display.html?id=40564" project="26" priority="None"></action>
+    <action id="439" created="1205323670767" resolution="OPEN" resolved="1215282746192" description="update docs how to set icons to AcopIcon" project="28" priority="None"></action>
+    <action id="428" created="1205166407277" resolution="RESOVED" resolved="1215282746193" description="" project="28" priority="None"></action>
+    <action id="59" created="1204489077574" resolution="OPEN" resolved="1215282746193" description="TANGO-CSS: investigate CSS" project="33" priority="None"></action>
+    <action id="406" created="1204805920844" resolution="OPEN" resolved="1215282746193" description="check DAL for andrey: https://rt.cosylab.com/rt3/Ticket/Display.html?id=40195" priority="None"></action>
+    <action id="407" created="1204805949572" resolution="OPEN" resolved="1215282746193" description="check RT for flash" project="27" priority="None"></action>
+    <action id="399" created="1204719728026" resolution="RESOVED" resolved="1215282746193" description="" project="28" priority="None"></action>
+    <action id="400" created="1204719751506" resolution="RESOVED" resolved="1215282746193" description="naredimo release aplikacij pred mojim odhgodom in markovo vrnitvijo" project="28" priority="None"></action>
+    <action id="389" created="1204706749145" resolution="OPEN" resolved="1215282746194" description="check optics server when writing optics engine:  \n\nHi Igor,\n\nto not forget about it, here the link to the optics toolbox manual:\n\nAll documentation about the toolbox can be found in the FLASH electronic\nlogbook http://ttfinfo.desy.de in the documentation tree - direct link:\n\nhttp://ttfinfo.desy.de/TTFelog/show.jsp?dir=/doc/Physics/Optics\n\nIf you need access to the elogbook from outside DESY, just let me know (since\nI'm also maintaining the elogbooks here at DESY).\n\nGreetings,\nRaimund\n" project="27" priority="None"></action>
+    <action id="381" created="1204626824972" resolution="RESOVED" resolved="1215282746194" description="preveri multicast error od phila" project="28" priority="None"></action>
+    <action id="372" created="1204547507058" resolution="OPEN" resolved="1215282746194" description="get list of of channels allowed to set from phil, ask ivan?" project="31" priority="None"></action>
+    <action id="376" created="1204622810473" resolution="TRASHED" resolved="1215282746194" description="ssh access za ADM" project="28" priority="None"></action>
+    <action id="103" created="1204489077593" resolution="TRASHED" resolved="1215282746195" description="plan po dnevih in urah, kaj delam kdaj, da mi vse znese: studija (koncaj cim prej), desy delo, flash, dal" priority="None"></action>
+    <action id="102" created="1204489077592" resolution="TRASHED" resolved="1215282746195" description="ANKA: Erhard: odgovori glede BBA" priority="None"></action>
+    <action id="101" created="1204489077592" resolution="TRASHED" resolved="1215282746195" description="ANKA: Erhard: odgovori glede BBA" priority="None"></action>
+    <action id="100" created="1204489077592" resolution="OPEN" resolved="1215282746195" description="ANKA-2008: write paper on OC" project="26" priority="None"></action>
+    <action id="99" created="1204489077591" resolution="TRASHED" resolved="1215282746195" description="DESY: prestavi projekt v support fazo" priority="None"></action>
+    <action id="98" created="1204489077591" resolution="TRASHED" resolved="1215282746195" description="DESY: trace analyzer, makr bo povedall report" priority="None"></action>
+    <action id="97" created="1204489077590" resolution="TRASHED" resolved="1215282746196" description="CSS: Clausen: sporoci,d a sme tu, naredi todo kaj imam za naredit glede Clausna" priority="None"></action>
+    <action id="96" created="1204489077590" resolution="TRASHED" resolved="1215282746196" description="DESY: update cosyitem documents with inpput from Mark" priority="None"></action>
+    <action id="95" created="1204489077589" resolution="TRASHED" resolved="1215282746196" description="ANKA: napisi clanek o OC" priority="None"></action>
+    <action id="94" created="1204489077589" resolution="TRASHED" resolved="1215282746196" description="pretopi AV input v openpoints in rt" priority="None"></action>
+    <action id="92" created="1204489077588" resolution="TRASHED" resolved="1215282746196" description="send open points to desy" priority="None"></action>
+    <action id="91" created="1204489077588" resolution="TRASHED" resolved="1215282746196" description="CSS-DAL: zakljuci" priority="None"></action>
+    <action id="88" created="1204489077588" resolution="OPEN" resolved="1215282746197" description="DESY: check Jakas code: #40564] REPLY: Manual Slider Ticks" project="28" priority="None"></action>
+    <action id="89" created="1204489077588" resolution="TRASHED" resolved="1215282746197" description="DAL; preglej Jakovo kodo in naredi release" priority="None"></action>
+    <action id="87" created="1204489077588" resolution="TRASHED" resolved="1215282746216" description="DESY: AV CMD parameters\nNope. This &quot;start-up&quot; is just a HELP to get the user where \nthey (most probably) want to go - not a &quot;restriction&quot; on what\nelse they can do....\n\nMark.\n\n\n\n&gt; &gt;-----Original Message-----\n&gt; &gt;From: Igor Kriznar [mailto:igor.kriznar@cosylab.com] \n&gt; &gt;Sent: Tuesday, 26 February, 2008 12:45\n&gt; &gt;To: Lomperski, Mark\n&gt; &gt;Subject: Re: Flash Alarms -&gt; Archive Viewer\n&gt; &gt;\n&gt; &gt;\n&gt; &gt;Should all other options in Archiver be disabled?\n&gt; &gt;\n&gt; &gt;Best regards, Igor\n&gt; &gt;\n&gt; &gt;\n&gt; &gt;Lomperski, Mark wrote:\n&gt;&gt; &gt;&gt; Yep!\n&gt;&gt; &gt;&gt; That is what you should see. And the property list has just three\n&gt;&gt; &gt;&gt; properties:\n&gt;&gt; &gt;&gt; -Charge-in Bunch 1\n&gt;&gt; &gt;&gt; -Hasylab Gas\n&gt;&gt; &gt;&gt; -Vibration data.\n&gt;&gt; &gt;&gt; \n&gt;&gt; &gt;&gt; So you can &quot;browse&quot; your way to this, or if the command-string is \n&gt;&gt; &gt;&gt; sent, then you should jump right to this position.\n&gt;&gt; &gt;&gt; \n&gt;&gt; &gt;&gt;    Cheers!\n&gt;&gt; &gt;&gt;       Mark.\n&gt;&gt; &gt;&gt; \n&gt;&gt; &gt;&gt; \n&gt;&gt; &gt;&gt; \n&gt;&gt; &gt;&gt; \n&gt;&gt;&gt; &gt;&gt;&gt; -----Original Message-----\n&gt;&gt;&gt; &gt;&gt;&gt; From: Igor Kriznar [mailto:igor.kriznar@cosylab.com]\n&gt;&gt;&gt; &gt;&gt;&gt; Sent: Tuesday, 26 February, 2008 12:24\n&gt;&gt;&gt; &gt;&gt;&gt; To: Lomperski, Mark\n&gt;&gt;&gt; &gt;&gt;&gt; Subject: Re: Flash Alarms -&gt; Archive Viewer\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt; Hi Mark,\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt; just to make sure I understand. This is for &quot;Subsystem Browsing&quot; \n&gt;&gt;&gt; &gt;&gt;&gt; mode,\n&gt;&gt;&gt; &gt;&gt;&gt; for machine &quot;FLASH&quot; and for History-Subsystem: &quot;HASYLAB-Gas&quot; ?\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt; If I select this, then I see following configurations: \n&gt; &gt;FLASH Overview\n&gt;&gt;&gt; &gt;&gt;&gt; and Gas Concentrations. Is this correct?\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt; Best regards, Igor\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt;\n&gt;&gt;&gt; &gt;&gt;&gt; Lomperski, Mark wrote:\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; Good Afternoon!\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt;\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; The FLASH Central Archiver now has a Subsystem for the\n&gt;&gt;&gt; &gt;&gt;&gt; HASYLAB-Alarms.\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; The JAVA Viewer should be started with the string\n&gt;&gt;&gt; &gt;&gt;&gt; &quot;FLASH.HASYLAB-Gas&quot;.\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; The (quickly-by-me) collected configurations and assocuated\n&gt;&gt;&gt; &gt;&gt;&gt; properties\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt; can be easily extended later.\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt;\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt;     Cheers!\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt;        Mark.\n&gt;&gt;&gt;&gt; &gt;&gt;&gt;&gt;\n&gt; &gt;\n" project="28" priority="None"></action>
+    <action id="86" created="1204489077587" resolution="TRASHED" resolved="1215282746216" description="DESY: add to man: how to disable slider" project="28" priority="None"></action>
+    <action id="85" created="1204489077587" resolution="OPEN" resolved="1215282746216" description="DESY: marks' input for aV" project="30" priority="None"></action>
+    <action id="84" created="1204489077587" resolution="TRASHED" resolved="1215282746216" description="DESY: help menu option with sennd option to issue tracking system (manits?)" project="28" priority="None"></action>
+    <action id="83" created="1204489077587" resolution="TRASHED" resolved="1215282746225" description="DESY: mantis? alternatives: bugzilla or jira" project="28" priority="None"></action>
+    <action id="82" created="1204489077587" resolution="OPEN" resolved="1215282746225" description="FLASH: zacni zbirat info za DOOCS in CS engine" project="27" priority="None"></action>
+    <action id="81" created="1204489077587" resolution="OPEN" resolved="1215282746225" description="FLASH: odpri fajle od eduarda in vnesi v CCSEngine" project="27" priority="None"></action>
+    <action id="79" created="1204489077586" resolution="OPEN" resolved="1215282746225" description="FLASH: add execute tests for engine" project="27" priority="None"></action>
+  </list>
+  <list id="11" name="DESY-2008" type="REFERENCE" closed="false">
+    <action id="104" created="1204489077605" resolution="OPEN" resolved="1215282746226" description="DEESY-2008: LINAC+DESY: technical commissionig 30.5 -&gt; 27.7, with beam 27.7 -&gt; 25.8, PETRA: technical 2.10 -&gt; 4.1.2009, with beam 5.1.2009 -&gt; 27.2.2009" priority="None"></action>
+  </list>
+  <list id="12" name="@CSL-Home" type="ACTION" closed="false">
+    <action id="110" created="1204489077607" resolution="TRASHED" resolved="1215282746226" description="CSL: Sporoci info za milje administraciji" priority="None"></action>
+    <action id="109" created="1204489077607" resolution="OPEN" resolved="1215282746226" description="CSL: poslji telefon stroske za nazaj Igorju" priority="None"></action>
+    <action id="108" created="1204489077606" resolution="TRASHED" resolved="1215282746226" description="poisci kartico zdravstvenega zavarovanja" priority="None"></action>
+    <action id="107" created="1204489077606" resolution="OPEN" resolved="1215282746226" description="preveri good to great DL od Joca" priority="None"></action>
+    <action id="106" created="1204489077606" resolution="OPEN" resolved="1215282746226" description="prenesi vse stare todoje v CP" priority="None"></action>
+    <action id="105" created="1204489077606" resolution="RESOVED" resolved="1215282746226" description="desy: boljsi screenshot za Jaka" priority="None"></action>
+  </list>
+  <list id="13" name="@Ike-Networking" type="ACTION" closed="false">
+    <action id="112" created="1204489077609" resolution="OPEN" resolved="1215282746227" description="klici Nikolo, poslji mail" start="1200006000000" remind="1200006000000" priority="None"></action>
+    <action id="111" created="1204489077608" resolution="TRASHED" resolved="1215282746227" description="Klici Habinca glede keramicnih nozev: 041 667 151" priority="None"></action>
+  </list>
+  <list id="14" name="@CSL-Agendas" type="ACTION" closed="false">
+    <action id="437" created="1205320608809" resolution="OPEN" resolved="1215282746227" description="envelope persitance aks hg" priority="None"></action>
+    <action id="420" created="1205147090108" resolution="TRASHED" resolved="1215282746227" description="From: Labudda, Andreas &lt;andreas.labudda@desy.de&gt;\nTo: Igor Kriznar &lt;igor.kriznar@cosylab.com&gt;\n\nHello.\n\nIs ist posible to set the font(size) of the NumberField of a\nLabelledNumberField Object?\n\nThanks, Andreas " project="28" priority="None"></action>
+    <action id="419" created="1205145992570" resolution="TRASHED" resolved="1215282746228" description="ivan: kaj je z nasim desyrt serverjem?" project="28" priority="None"></action>
+    <action id="421" created="1205147556609" resolution="TRASHED" resolved="1215282746228" description="Andreas:\nHello.\n\nI'm not able to add an Value Icon pair via VE Property - Icons\nBrowsing for a file is not available.\nThe button &quot;Add&quot; is always disabled.\nWich are the supported grafik formats? Gif, png, jpg, bmp (gues not)?\nDefining the icons/value pair on my own generates &quot;Invalid dimensions\n1:0&quot; inside the MCS server framework.\nAny idea?\n\nAfter all have a nice weekend.\n\nBye, Andreas\n" project="28" priority="None"></action>
+    <action id="139" created="1204489077622" resolution="TRASHED" resolved="1215282746228" description="govori z Igorjem glede Koncine, hoce iz 4 na 5" priority="None"></action>
+    <action id="138" created="1204489077622" resolution="TRASHED" resolved="1215282746228" description="Bacher: cim prej moramo narediti uradno pogodbo, placilo bo po etapah, ponudbo naredimo z za prorotype aplikacije, finish je v nsm" priority="None"></action>
+    <action id="137" created="1204489077621" resolution="TRASHED" resolved="1215282746228" description="phil: tango2 tine, je s ekaj za naredit?" priority="None"></action>
+    <action id="136" created="1204489077620" resolution="TRASHED" resolved="1215282746228" description="phil: lahko dobim racunalnik z vnc?" priority="None"></action>
+    <action id="135" created="1204489077619" resolution="TRASHED" resolved="1215282746229" description="Phil: can we get access to one machine with VNC?" priority="None"></action>
+    <action id="134" created="1204489077619" resolution="TRASHED" resolved="1215282746229" description="housing: susenje perila, kanta za smeti, internet, placilo prek bancnega nakazila\n" priority="None"></action>
+    <action id="133" created="1204489077618" resolution="TRASHED" resolved="1215282746229" description="phil: kako deployat site?" priority="None"></action>
+    <action id="132" created="1204489077618" resolution="TRASHED" resolved="1215282746229" description="phil: kaj z dokumentacijo" priority="None"></action>
+    <action id="131" created="1204489077617" resolution="TRASHED" resolved="1215282746229" description="jaku poroci ideje glede AlV" priority="None"></action>
+    <action id="130" created="1204489077617" resolution="RESOVED" resolved="1215282746229" description="phil: nismo sli MCA se nic, site tudi ne" priority="None"></action>
+    <action id="129" created="1204489077616" resolution="TRASHED" resolved="1215282746230" description="bacher: naredimo okvirni plan, kaksna pricakovanja ima do mene med commisioningom?" priority="None"></action>
+    <action id="128" created="1204489077615" resolution="TRASHED" resolved="1215282746230" description="bacher: bi sprejel kakega studenta za commisioning PETRA3, lahko uporabi budget prek JSI" priority="None"></action>
+    <action id="127" created="1204489077615" resolution="TRASHED" resolved="1215282746230" description="Torsten: kako gre z serverjem, rabimo komentarje na matlab, student dela diplomo, lahko napise kak modul ali bi ga povabili za kak teden?" priority="None"></action>
+    <action id="126" created="1204489077615" resolution="OPEN" resolved="1215282746230" description="ANKA: Odgovori glede BBA erhardu" project="26" priority="None"></action>
+    <action id="125" created="1204489077615" resolution="OPEN" resolved="1215282746230" description="uwe: poizvej kaki kontakti bi lahko bili v machine in beamline" priority="None"></action>
+    <action id="124" created="1204489077615" resolution="TRASHED" resolved="1215282746230" description="Torsten: klici ga za tilna in  server" project="27" priority="None"></action>
+    <action id="123" created="1204489077614" resolution="TRASHED" resolved="1215282746230" description="opozori GH na acop buge" project="28" priority="None"></action>
+    <action id="122" created="1204489077614" resolution="RESOVED" resolved="1215282746231" description="sahoo ping" priority="None"></action>
+    <action id="121" created="1204489077614" resolution="TRASHED" resolved="1215282746231" description="eduard: &quot;break point index&quot;" priority="None"></action>
+    <action id="120" created="1204489077613" resolution="TRASHED" resolved="1215282746231" description="eduart: what is lower limit for correctors" priority="None"></action>
+    <action id="119" created="1204489077613" resolution="RESOVED" resolved="1215282746231" description="Phil: transit recorder specs" priority="None"></action>
+    <action id="118" created="1204489077612" resolution="RESOVED" resolved="1215282746231" description="phil: splach or about" priority="None"></action>
+    <action id="117" created="1204489077612" resolution="TRASHED" resolved="1215282746231" description="FLASH: on monday call doocs server guy" remind="1204498800000" priority="None"></action>
+    <action id="116" created="1204489077612" resolution="TRASHED" resolved="1215282746232" description="jaka: can we add history to scope" priority="None"></action>
+    <action id="115" created="1204489077611" resolution="OPEN" resolved="1215282746232" description="Erhard: odgovorii glede Sw problemov" priority="None"></action>
+  </list>
+  <list id="15" name="@Ike-Errand" type="ACTION" closed="false">
+    <action id="140" created="1204489077624" resolution="TRASHED" resolved="1215282746232" description="kupi: varovala za omarice" priority="None"></action>
+  </list>
+  <list id="17" name="FLASH-OC" type="REFERENCE" closed="false">
+    <action id="153" created="1204489077630" resolution="TRASHED" resolved="1215282746232" description="Jernnej: * you have made really a lot of code in short time. My general concern is that application will get too complicated too soon. That you started too early doing detains and we will later have to rewrite too much, because you will not address real problems. Of we end up hunting bugs we would not have in first place with more conservative desing. It's a concern from my experiences.\n" priority="None"></action>
+  </list>
+  <list id="16" name="@Ike-Online" type="ACTION" closed="false">
+    <action id="152" created="1204489077629" resolution="OPEN" resolved="1215282746233" description="uredi album na spletu" priority="None"></action>
+    <action id="151" created="1204489077629" resolution="TRASHED" resolved="1215282746233" description="restavriraj palm" priority="None"></action>
+    <action id="150" created="1204489077629" resolution="OPEN" resolved="1215282746233" description="uredi ike* domene" priority="None"></action>
+    <action id="149" created="1204489077628" resolution="TRASHED" resolved="1215282746233" description="Sporoc(i naslov Fride: Kogejeva ul 16 Ljubljana na 5889-311, V812196" remind="1199975299746" priority="None"></action>
+    <action id="148" created="1204489077628" resolution="OPEN" resolved="1215282746233" description="maven: problems with javadoc: * how can I use option -top with html code? * grouping packages not documented properly" priority="None"></action>
+    <action id="147" created="1204489077628" resolution="OPEN" resolved="1215282746233" description="restavriraj palm" priority="None"></action>
+    <action id="146" created="1204489077627" resolution="TRASHED" resolved="1215282746233" description="naroci pregled avta 2" priority="None"></action>
+    <action id="145" created="1204489077627" resolution="TRASHED" resolved="1215282746234" description="klici na thule in v loko za prtljaznik za kolo" priority="None"></action>
+    <action id="144" created="1204489077626" resolution="TRASHED" resolved="1215282746234" description="lahko dobis SW za kamero prek neta?" priority="None"></action>
+    <action id="143" created="1204489077626" resolution="TRASHED" resolved="1215282746234" description="Olga: bi kaj prisla na obisk?" priority="None"></action>
+    <action id="142" created="1204489077625" resolution="TRASHED" resolved="1215282746234" description="olga: imas mogoce ocala za placanje ti?" priority="None"></action>
+    <action id="141" created="1204489077625" resolution="TRASHED" resolved="1215282746234" description="Placaj racune oz naroci Olgi da placa" priority="None"></action>
+  </list>
+  <list id="19" name="CosyBeans" type="REFERENCE" closed="false">
+    <action id="230" created="1204489077668" resolution="OPEN" resolved="1215282746234" description="header plugin: naredi site" priority="None"></action>
+  </list>
+  <list id="18" name="@CSL-Online" type="ACTION" closed="false">
+    <action id="417" created="1205145204900" resolution="OPEN" resolved="1215282746235" description="preveri clausen tickete, startaj nov projekt za Clausna, https://rt.cosylab.com/rt3/Ticket/Display.html?id=37360. https://rt.cosylab.com/rt3/Ticket/Display.html?id=35398" priority="None"></action>
+    <action id="229" created="1204489077666" resolution="TRASHED" resolved="1215282746235" description="Stanje z Rok Koncina" priority="None"></action>
+    <action id="228" created="1204489077666" resolution="TRASHED" resolved="1215282746235" description="DAL: fix remaining points for Andrey" priority="None"></action>
+    <action id="227" created="1204489077666" resolution="TRASHED" resolved="1215282746235" description="DAL: Reply to Andrey" priority="None"></action>
+    <action id="226" created="1204489077665" resolution="TRASHED" resolved="1215282746235" description="CSL: close old tickets" priority="None"></action>
+    <action id="225" created="1204489077664" resolution="TRASHED" resolved="1215282746235" description="CSL: pripravi se na razgovor z Juretom" priority="None"></action>
+    <action id="224" created="1204489077664" resolution="OPEN" resolved="1215282746235" description="CSL: preveri anka nakazila na ba-ca" priority="None"></action>
+    <action id="223" created="1204489077664" resolution="TRASHED" resolved="1215282746236" description="CSL: vpisi dopuste" priority="None"></action>
+    <action id="222" created="1204489077663" resolution="TRASHED" resolved="1215282746236" description="DESY2: chart: change grid color" priority="None"></action>
+    <action id="221" created="1204489077663" resolution="RESOVED" resolved="1215282746236" description="DESY3: update cosyitems document" priority="None"></action>
+    <action id="220" created="1204489077662" resolution="TRASHED" resolved="1215282746236" description="DESY2: user manages config files for TrendViewer" priority="None"></action>
+    <action id="219" created="1204489077662" resolution="TRASHED" resolved="1215282746236" description="DESY2: pojdi cez vse aplikacije" priority="None"></action>
+    <action id="218" created="1204489077661" resolution="TRASHED" resolved="1215282746236" description="DESY2: prestavi SVN" priority="None"></action>
+    <action id="217" created="1204489077661" resolution="TRASHED" resolved="1215282746236" description="DESY2: Open Points" priority="None"></action>
+    <action id="216" created="1204489077660" resolution="TRASHED" resolved="1215282746237" description="ANKA2007: zapri projekt" priority="None"></action>
+    <action id="215" created="1204489077660" resolution="TRASHED" resolved="1215282746237" description="DESY2: reply DESY Housing ko tocno ves datume" priority="None"></action>
+    <action id="214" created="1204489077659" resolution="TRASHED" resolved="1215282746237" description="DESY2: mail desy teamu glede smerinc: poslji ppt iz workshopa, high level SW wiki" priority="None"></action>
+    <action id="213" created="1204489077658" resolution="RESOVED" resolved="1215282746237" description="DESY: mail:&quot;Warning: Your DESY password will expire&quot; on 2008.02.18" remind="1202983496459" priority="None"></action>
+    <action id="212" created="1204489077658" resolution="TRASHED" resolved="1215282746237" description="DESY2: napisi ticket z markovimi idejami glede razsiritve OH" priority="None"></action>
+    <action id="211" created="1204489077657" resolution="RESOVED" resolved="1215282746237" description="ANKA2008: tasks dokument" priority="None"></action>
+    <action id="210" created="1204489077657" resolution="TRASHED" resolved="1215282746238" description="ACC: updejtaj beermat" priority="None"></action>
+    <action id="209" created="1204489077656" resolution="RESOVED" resolved="1215282746238" description="ANKA2008: ppripravi se na obisk" priority="None"></action>
+    <action id="208" created="1204489077656" resolution="TRASHED" resolved="1215282746238" description="ANKA2008: odpri projekt" priority="None"></action>
+    <action id="207" created="1204489077656" resolution="OPEN" resolved="1215282746238" description="ACC: SVN pojdi ce twiki stran in delegiraj" priority="None"></action>
+    <action id="206" created="1204489077655" resolution="TRASHED" resolved="1215282746238" description="ACC-EPAC: Clanek o Flash pa naj Ike vprasa Limberga, ce bi kaj skupaj napisali. A naj bo delo na DESY in smo mi samo soavtorji. " priority="None"></action>
+    <action id="205" created="1204489077655" resolution="TRASHED" resolved="1215282746238" description="DESY-DAL: fix DAL problem for Mathias" priority="None"></action>
+    <action id="204" created="1204489077654" resolution="RESOVED" resolved="1215282746239" description="poslji vakum anka konfiguracijo Kobalu" priority="None"></action>
+    <action id="203" created="1204489077654" resolution="TRASHED" resolved="1215282746239" description="CSL: preveri oseba ticket, navezi kontakt mail:Tine Zivic, potencialni kandidat" priority="None"></action>
+    <action id="202" created="1204489077653" resolution="TRASHED" resolved="1215282746239" description="DESY2008: preglej tickete" priority="None"></action>
+    <action id="201" created="1204489077653" resolution="TRASHED" resolved="1215282746239" description="DESY2008: Jaka, kako gre, rabis pomoc?" priority="None"></action>
+    <action id="200" created="1204489077652" resolution="TRASHED" resolved="1215282746239" description="DESY2008: task za Jerneja: vprasaj ali lahko pomaga jakatu" priority="None"></action>
+    <action id="199" created="1204489077652" resolution="TRASHED" resolved="1215282746239" description="ANKA2008: prevei OC sign problem" priority="None"></action>
+    <action id="198" created="1204489077651" resolution="TRASHED" resolved="1215282746239" description="ANKA2008: fill PS table input cells with one value" priority="None"></action>
+    <action id="197" created="1204489077651" resolution="TRASHED" resolved="1215282746240" description="ANKA2008: refactor GUI for OC" priority="None"></action>
+    <action id="196" created="1204489077650" resolution="TRASHED" resolved="1215282746240" description="DESY2008: kreiraj projekt" priority="None"></action>
+    <action id="195" created="1204489077650" resolution="OPEN" resolved="1215282746240" description="ACC: logira jse v Jaccow: EPAC 2008 Contribution" priority="None"></action>
+    <action id="194" created="1204489077650" resolution="TRASHED" resolved="1215282746240" description="ANKA: Report from Wolfgang and task list" priority="None"></action>
+    <action id="193" created="1204489077649" resolution="TRASHED" resolved="1215282746240" description="ANKA: task list with estimates for Erhard" priority="None"></action>
+    <action id="192" created="1204489077649" resolution="TRASHED" resolved="1215282746240" description="DESY-08: sporoci Baccherju datum prihoda" priority="None"></action>
+    <action id="191" created="1204489077648" resolution="TRASHED" resolved="1215282746240" description="DESY-08: sporoci v haousing zeljeni termin, 2 to 3 mesece od srede januarja, en mesec junij/julij" priority="None"></action>
+    <action id="190" created="1204489077648" resolution="TRASHED" resolved="1215282746241" description="vpisi cas v rt" priority="None"></action>
+    <action id="189" created="1204489077647" resolution="TRASHED" resolved="1215282746241" description="ANKA: reply erhardu glede bba" priority="None"></action>
+    <action id="188" created="1204489077647" resolution="TRASHED" resolved="1215282746241" description="DESY2008: reply to phil about docs" priority="None"></action>
+    <action id="187" created="1204489077646" resolution="TRASHED" resolved="1215282746241" description="ACC: predlog prestavitve common CVS v SVN" priority="None"></action>
+    <action id="186" created="1204489077646" resolution="TRASHED" resolved="1215282746241" description="ACC: potrdi tickete" priority="None"></action>
+    <action id="185" created="1204489077645" resolution="TRASHED" resolved="1215282746241" description="DESY: naredi financni plan bivanja v DESY" priority="None"></action>
+    <action id="184" created="1204489077645" resolution="TRASHED" resolved="1215282746241" description="PRimzo razgovor" priority="None"></action>
+    <action id="183" created="1204489077645" resolution="TRASHED" resolved="1215282746242" description="ACC: plan dela za Roka, daj mu plugine in cosybeanse" priority="None"></action>
+    <action id="182" created="1204489077644" resolution="TRASHED" resolved="1215282746242" description="FLASH: work brakedown do konca naslednjega tedna" remind="1199703134863" priority="None"></action>
+    <action id="181" created="1204489077644" resolution="TRASHED" resolved="1215282746242" description="ACC: plan dela za Tilna in Jerneja" priority="None"></action>
+    <action id="180" created="1204489077643" resolution="TRASHED" resolved="1215282746242" description="ACC: plan dela za Jaka za ta teden" priority="None"></action>
+    <action id="179" created="1204489077643" resolution="TRASHED" resolved="1215282746242" description="if you or Igor have access to the ankawiki, you get the documents here:\n\nhttp://ankawiki.ka.fzk.de/mediawiki/index.php/SCU14-Cosylab_ContSys-Project\n\nlinked to \n\nhttp://ankaserv3.ka.fzk.de/doc/hardware/SCU14/\n" priority="None"></action>
+    <action id="178" created="1204489077642" resolution="TRASHED" resolved="1215282746242" description="reply marku, koliko nas res stane in ali je smiselno" priority="None"></action>
+    <action id="177" created="1204489077641" resolution="TRASHED" resolved="1215282746243" description="ANKa-2008: reeply to Erhards BBA questions" priority="None"></action>
+    <action id="176" created="1204489077641" resolution="TRASHED" resolved="1215282746243" description="DESY: naredi project tickets for jaka" priority="None"></action>
+    <action id="175" created="1204489077640" resolution="TRASHED" resolved="1215282746243" description="ESRF: startaj projekt" priority="None"></action>
+    <action id="174" created="1204489077640" resolution="TRASHED" resolved="1215282746243" description="DESY: naredi financni plan bivanja v DESY" priority="None"></action>
+    <action id="173" created="1204489077639" resolution="RESOVED" resolved="1215282746243" description="joc: kje lahko dobim gtd posnetke?" priority="None"></action>
+    <action id="172" created="1204489077639" resolution="TRASHED" resolved="1215282746243" description="primoz: opomni, da je dolzen narediti dva plana za svojo zasedenost" priority="None"></action>
+    <action id="171" created="1204489077638" resolution="TRASHED" resolved="1215282746244" description="vpisi pogovor z rokom in poslji porocilo pajorju in igorju" priority="None"></action>
+    <action id="170" created="1204489077638" resolution="TRASHED" resolved="1215282746244" description="jaka: rabis kaj od phila" priority="None"></action>
+    <action id="169" created="1204489077637" resolution="TRASHED" resolved="1215282746244" description="ANKA: Erhard: odgovori glede BBA" priority="None"></action>
+    <action id="168" created="1204489077637" resolution="TRASHED" resolved="1215282746244" description="marjana: kaksna so pravila glede nadur zaradi poti?" priority="None"></action>
+    <action id="167" created="1204489077636" resolution="TRASHED" resolved="1215282746244" description="marjana: resetiraj dopuste" priority="None"></action>
+    <action id="166" created="1204489077636" resolution="TRASHED" resolved="1215282746244" description="naredi ticket za potovanje" priority="None"></action>
+    <action id="165" created="1204489077636" resolution="TRASHED" resolved="1215282746244" description="ponudi stanovanje pod &quot;sindikanimi&quot; pogoji za cez veliko noc, najprej v svoji skupini, nato acc, nato csl" priority="None"></action>
+    <action id="164" created="1204489077635" resolution="TRASHED" resolved="1215282746245" description="ticket za potovanja" priority="None"></action>
+    <action id="163" created="1204489077635" resolution="TRASHED" resolved="1215282746245" description="joc: pingaj Matta, je to se aktualno" priority="None"></action>
+    <action id="161" created="1204489077634" resolution="OPEN" resolved="1215282746245" description="CSL: poslji tekoce specifikacije Igorju" priority="None"></action>
+    <action id="160" created="1204489077634" resolution="OPEN" resolved="1215282746245" description="vse nase produkte prenesi na projects.csl, naredi seznam, vprasaj seksija" priority="None"></action>
+    <action id="159" created="1204489077634" resolution="TRASHED" resolved="1215282746245" description="Rok koncinca: delegiraj cocybeans naloge" priority="None"></action>
+    <action id="158" created="1204489077633" resolution="TRASHED" resolved="1215282746245" description="ACC: pojdi skozi projekte in zapri kar se da" priority="None"></action>
+    <action id="157" created="1204489077633" resolution="TRASHED" resolved="1215282746245" description="Placaj housing BIC/SWIFT:  HASPDEHHXX\nIBAN:       DE06 2005 0550 1051 7938 16\nYou have to pay 700,00 per month or a total of 1,750.00." priority="None"></action>
+    <action id="156" created="1204489077633" resolution="OPEN" resolved="1215282746246" description="igor: pripravi CSL paket ugodnosti za daljsa potovanja" priority="None"></action>
+    <action id="155" created="1204489077633" resolution="OPEN" resolved="1215282746246" description="premakni naprej prenos common zade v SVN" priority="None"></action>
+    <action id="154" created="1204489077632" resolution="TRASHED" resolved="1215282746246" description="ponudi stanovanje pod &quot;sindikanimi&quot; pogoji za cez veliko noc, najprej v svoji skupini, nato acc, nato csl" priority="None"></action>
+  </list>
+  <list id="21" name="@GTD-BUGS" type="ACTION" closed="false">
+    <action id="440" created="1205324800877" resolution="TRASHED" resolved="1215282746246" description="project not set in panel" priority="None"></action>
+    <action id="442" created="1205324849653" resolution="TRASHED" resolved="1215282746246" description="dnd can erase description, setting to &quot;&quot; description should not be allowed at all" priority="None"></action>
+    <action id="441" created="1205324816957" resolution="TRASHED" resolved="1215282746246" description="import fails to preserver poject information" priority="None"></action>
+    <action id="443" created="1205324907140" resolution="TRASHED" resolved="1215282746246" description="clicking in table fires save, throw error on all events which does not have real change" priority="None"></action>
+    <action id="426" created="1205150769405" resolution="TRASHED" resolved="1215282746247" description="resolve v project view ne prime" priority="None"></action>
+    <action id="410" created="1204808040792" resolution="TRASHED" resolved="1215282746247" description="novi taski v project folder bi morali iti na zacetek" priority="None"></action>
+    <action id="401" created="1204721416581" resolution="TRASHED" resolved="1215282746247" description="drag should start with action under pointer, not selected action" priority="None"></action>
+    <action id="375" created="1204581878222" resolution="OPEN" resolved="1215282746247" description="url window has launch in browser button" priority="None"></action>
+    <action id="355" created="1204534518039" resolution="TRASHED" resolved="1215282746247" description="up/down not working on project table" priority="None"></action>
+    <action id="358" created="1204540675854" resolution="TRASHED" resolved="1215282746247" description="esc button not working while editing project" priority="None"></action>
+    <action id="357" created="1204540660591" resolution="TRASHED" resolved="1215282746247" description="project and date uses prefered width" priority="None"></action>
+    <action id="360" created="1204540966701" resolution="OPEN" resolved="1215282746247" description="project selection in collect and process" priority="None"></action>
+    <action id="359" created="1204540828917" resolution="TRASHED" resolved="1215282746248" description="highest ID hould help define id column width" priority="None"></action>
+    <action id="362" created="1204541162131" resolution="TRASHED" resolved="1215282746248" description="click in tree should select closest item" priority="None"></action>
+    <action id="364" created="1204541388515" resolution="TRASHED" resolved="1215282746248" description="auto save belov save menu position" priority="None"></action>
+    <action id="352" created="1204489291543" resolution="TRASHED" resolved="1215282746248" description="rename on project not working in tree" project="0" priority="None"></action>
+    <action id="354" created="1204489642079" resolution="TRASHED" resolved="1215282746248" description="resize of columns not working, perhaps GTK &quot;feature&quot;" project="0" priority="None"></action>
+    <action id="256" created="1204489077678" resolution="TRASHED" resolved="1215282746248" description="gtd: default folders should have up-down disabled" priority="None"></action>
+    <action id="255" created="1204489077678" resolution="TRASHED" resolved="1215282746248" description="jgtd: resolved folder should show count for resolved tasks and there should be no operation in table" priority="None"></action>
+    <action id="254" created="1204489077677" resolution="TRASHED" resolved="1215282746249" description="jgtd: calcculate correct inbasket hegith in prcess tab" priority="None"></action>
+    <action id="253" created="1204489077677" resolution="TRASHED" resolved="1215282746249" description="jgtd: make sure actions are not lost, synchronize, make count checks" priority="None"></action>
+    <action id="252" created="1204489077677" resolution="TRASHED" resolved="1215282746249" description="gtd: at any time one of groups in folder view should be expanded and some folder selected, furst by default" priority="None"></action>
+    <action id="251" created="1204489077676" resolution="TRASHED" resolved="1215282746249" description="gtd: folder panel with rename and show completed options" priority="None"></action>
+    <action id="249" created="1204489077676" resolution="TRASHED" resolved="1215282746249" description="jgtd: rename for folders" priority="None"></action>
+    <action id="248" created="1204489077675" resolution="TRASHED" resolved="1215282746249" description="gtd: when task is added, then it should be selected in spinner" priority="None"></action>
+    <action id="247" created="1204489077675" resolution="TRASHED" resolved="1215282746249" description="gtd: move should move spinner down" priority="None"></action>
+    <action id="246" created="1204489077674" resolution="TRASHED" resolved="1215282746249" description="gtd: dodaj tooltip navodila" priority="None"></action>
+    <action id="245" created="1204489077674" resolution="TRASHED" resolved="1215282746250" description="gtd: spinner gets stuck on top or bottom of list" priority="None"></action>
+    <action id="244" created="1204489077673" resolution="TRASHED" resolved="1215282746250" description="gtd: spinner should be disabled for editing when no action" priority="None"></action>
+    <action id="243" created="1204489077672" resolution="TRASHED" resolved="1215282746250" description="gtd: resolve/delete not enabled in execute" priority="None"></action>
+    <action id="242" created="1204489077672" resolution="TRASHED" resolved="1215282746250" description="gtd: move should move spinner down" priority="None"></action>
+    <action id="241" created="1204489077671" resolution="TRASHED" resolved="1215282746250" description="gtd: dodaj tooltip navodila" priority="None"></action>
+    <action id="239" created="1204489077671" resolution="TRASHED" resolved="1215282746250" description="gtd: up/down not working" priority="None"></action>
+    <action id="237" created="1204489077671" resolution="TRASHED" resolved="1215282746250" description="td: case sensitive: rename to match case" priority="None"></action>
+    <action id="236" created="1204489077671" resolution="TRASHED" resolved="1215282746251" description="gtd: when dragging action, folder should not get selected" priority="None"></action>
+    <action id="235" created="1204489077670" resolution="TRASHED" resolved="1215282746251" description="gtd: first DnD usually does nto work" priority="None"></action>
+    <action id="234" created="1204489077670" resolution="TRASHED" resolved="1215282746251" description="GTD: not possiblee to dnd actions to references" priority="None"></action>
+    <action id="233" created="1204489077670" resolution="TRASHED" resolved="1215282746251" description="gtd: clone nto working" priority="None"></action>
+  </list>
+  <list id="20" name="@CSL-Office" type="ACTION" closed="false">
+    <action id="232" created="1204489077669" resolution="TRASHED" resolved="1215282746251" description="vrni DVD igorju" priority="None"></action>
+    <action id="231" created="1204489077669" resolution="TRASHED" resolved="1215282746251" description="big bang racun v tajnistvo" priority="None"></action>
+  </list>
+  <list id="23" name="@GTD-FR" type="ACTION" closed="false">
+    <action id="405" created="1204805734910" resolution="OPEN" resolved="1215282746252" description="usucsefsfull loading offers to load backup" priority="None"></action>
+    <action id="403" created="1204804966700" resolution="OPEN" resolved="1215282746252" description="enter in tree panle adds" priority="None"></action>
+    <action id="396" created="1204717529970" resolution="OPEN" resolved="1215282746252" description="at startup action tree should be expanded" priority="None"></action>
+    <action id="395" created="1204707623864" resolution="OPEN" resolved="1215282746252" description="tab should be organize&amp;execute" priority="None"></action>
+    <action id="393" created="1204707541995" resolution="OPEN" resolved="1215282746252" description="project column in action table" priority="None"></action>
+    <action id="391" created="1204706920640" resolution="OPEN" resolved="1215282746252" description="links in description should be linkable, should I also switch on RTF and HTML rendering?" priority="None"></action>
+    <action id="238" created="1204489077671" resolution="OPEN" resolved="1215282746252" description="gtd: sortiranje po stolpcih, a ne za vse tabele" priority="None"></action>
+    <action id="369" created="1204544823824" resolution="OPEN" resolved="1215282746252" description="create sampel database and some screenshots, database should be dowloadable from web page" priority="None"></action>
+    <action id="356" created="1204535998071" resolution="OPEN" resolved="1215282746252" description="second instancce check alo port, brigs to forward existing window or offers to remove lock" priority="None"></action>
+    <action id="361" created="1204541004973" resolution="OPEN" resolved="1215282746253" description="help area at bottom with instructions" project="25" priority="None"></action>
+    <action id="363" created="1204541242971" resolution="OPEN" resolved="1215282746253" description="import option for ignoring resolved" project="25" priority="None"></action>
+    <action id="367" created="1204541552017" resolution="OPEN" resolved="1215282746253" description="optimize performacne when switching tabs" project="25" priority="None"></action>
+    <action id="351" created="1204489285317" resolution="OPEN" resolved="1215282746253" description="project editor for project folder" priority="None"></action>
+    <action id="353" created="1204489320171" resolution="OPEN" resolved="1215282746253" description="option to dhow/hide resolved actions and closed projects/folders" project="25" priority="None"></action>
+    <action id="250" created="1204489077676" resolution="OPEN" resolved="1215282746253" description="jgtd: undo" project="25" priority="None"></action>
+    <action id="240" created="1204489077671" resolution="OPEN" resolved="1215282746253" description="gtd: it is possible to drag/drop to same folder, as result there are two actions in folder" priority="None"></action>
+    <action id="291" created="1204489077706" resolution="OPEN" resolved="1215282746255" description="jgtd: add purge option" priority="None"></action>
+    <action id="286" created="1204489077693" resolution="OPEN" resolved="1215282746256" description="jgtd: lines pass remind date should be red" priority="None"></action>
+    <action id="290" created="1204489077700" resolution="TRASHED" resolved="1215282746256" description="jgtd: Move to folder selects action in folder" priority="None"></action>
+    <action id="289" created="1204489077699" resolution="TRASHED" resolved="1215282746256" description="jgtd: resolve ali delete should select next line in process tab" priority="None"></action>
+    <action id="288" created="1204489077699" resolution="TRASHED" resolved="1215282746256" description="jgtd: use gtk icons" priority="None"></action>
+    <action id="287" created="1204489077693" resolution="TRASHED" resolved="1215282746256" description="jgtd: id has more margin in table" priority="None"></action>
+    <action id="285" created="1204489077693" resolution="OPEN" resolved="1215282746256" description="jgtd: search option" priority="None"></action>
+    <action id="283" created="1204489077692" resolution="OPEN" resolved="1215282746256" description="jgtd: add borders to different panels" priority="None"></action>
+    <action id="284" created="1204489077692" resolution="TRASHED" resolved="1215282746256" description="jgtd: folder view shoudl show count for open tasks" priority="None"></action>
+    <action id="293" created="1204489077708" resolution="OPEN" resolved="1215282746257" description="gtd: acknowlidment for picture, icons and libraries" project="25" priority="None"></action>
+    <action id="282" created="1204489077692" resolution="RESOVED" resolved="1215282746257" description="jgtd: new button enable/disable" priority="None"></action>
+    <action id="281" created="1204489077691" resolution="OPEN" resolved="1215282746257" description="jgtd: dnd v process tabu" priority="None"></action>
+    <action id="280" created="1204489077690" resolution="TRASHED" resolved="1215282746257" description="jgtd: popravi remind label" priority="None"></action>
+    <action id="279" created="1204489077690" resolution="OPEN" resolved="1215282746257" description="jgtd: intaller for lin, win and mac" priority="None"></action>
+    <action id="278" created="1204489077690" resolution="TRASHED" resolved="1215282746257" description="jgts: fix new button in collect panel" priority="None"></action>
+    <action id="277" created="1204489077689" resolution="TRASHED" resolved="1215282746257" description="jgtd: preserve EOL in descripotion" priority="None"></action>
+    <action id="276" created="1204489077689" resolution="OPEN" resolved="1215282746257" description="jgtd: add project tag" priority="None"></action>
+    <action id="275" created="1204489077689" resolution="OPEN" resolved="1215282746257" description="jgtd: use visitor pattern for storing and checking model structure" priority="None"></action>
+    <action id="274" created="1204489077688" resolution="OPEN" resolved="1215282746258" description="jgtd: check focus transfer" priority="None"></action>
+    <action id="273" created="1204489077688" resolution="OPEN" resolved="1215282746258" description="jgtd: resurect resolved task" priority="None"></action>
+    <action id="272" created="1204489077688" resolution="OPEN" resolved="1215282746258" description="gtd: add keyboard shortcuts for all operations" priority="None"></action>
+    <action id="271" created="1204489077688" resolution="OPEN" resolved="1215282746258" description="jgtd: resize before execute tab is opened makes problems for rigth divider side" priority="None"></action>
+    <action id="270" created="1204489077688" resolution="OPEN" resolved="1215282746258" description="gtd: hor split for selected task in process tab" priority="None"></action>
+    <action id="269" created="1204489077687" resolution="OPEN" resolved="1215282746258" description="gtd: html( pdf) report" priority="None"></action>
+    <action id="268" created="1204489077687" resolution="OPEN" resolved="1215282746258" description="gtd: resolved folder should be ordered by resolve date or id" priority="None"></action>
+    <action id="267" created="1204489077687" resolution="OPEN" resolved="1215282746258" description="gtd: consistancy check visitor, report to info" priority="None"></action>
+    <action id="266" created="1204489077687" resolution="OPEN" resolved="1215282746258" description="gtd: process should show number of tasks left" priority="None"></action>
+    <action id="265" created="1204489077687" resolution="OPEN" resolved="1215282746259" description="gtd: priority keyword" priority="None"></action>
+    <action id="264" created="1204489077687" resolution="OPEN" resolved="1215282746259" description="gtd: folder panel can add/edit projects" priority="None"></action>
+    <action id="263" created="1204489077687" resolution="OPEN" resolved="1215282746259" description="gtd: accounts for tracking time" priority="None"></action>
+    <action id="262" created="1204489077686" resolution="OPEN" resolved="1215282746259" description="gtd: add checklists" priority="None"></action>
+    <action id="261" created="1204489077686" resolution="OPEN" resolved="1215282746259" description="gtd: add fast inbucket dialog to all pages" priority="None"></action>
+    <action id="260" created="1204489077686" resolution="TRASHED" resolved="1215282746259" description="GTD: import tool" priority="None"></action>
+  </list>
+  <list id="22" name="@Ike-Admin" type="ACTION" closed="false">
+    <action id="259" created="1204489077681" resolution="TRASHED" resolved="1215282746259" description="Oddaj vlogo za DURS za podporo, mail:Uveljavljanje posebne olajsave za vzdrzevane druzinske clane" priority="None"></action>
+    <action id="258" created="1204489077680" resolution="TRASHED" resolved="1215282746259" description="napisi pooblastila za roka in olgo" remind="1202380226578" priority="None"></action>
+    <action id="257" created="1204489077679" resolution="TRASHED" resolved="1215282746260" description="uredi z rokom pooblastila in zacetek trzenja" priority="None"></action>
+  </list>
+  <list id="24" name="ANKA-Metainance" type="REFERENCE" closed="false">
+    <action id="292" created="1204489077707" resolution="OPEN" resolved="1215282746260" description="ANKA: logging managerja in timeoutov" priority="None"></action>
+  </list>
+  <list id="-3" name="In-Bucket" type="INBUCKET" closed="false">
+    <action id="447" created="1215282819111" resolution="OPEN" description="zmasiraj zeno" priority="None"></action>
+    <action id="446" created="1215282805993" resolution="RESOVED" resolved="1215282879954" description="okopaj Livijo" priority="None"></action>
+    <action id="445" created="1215282796362" resolution="OPEN" description="pomij kopalnico" priority="None"></action>
+    <action id="444" created="1215282783317" resolution="OPEN" description="previj Livijo" priority="None"></action>
+    <action id="433" created="1205253590063" resolution="RESOVED" resolved="1215282746260" description="mail uwe glede dela" priority="None"></action>
+    <action id="416" created="1205137775437" resolution="RESOVED" resolved="1215282746260" description="poslji Clausnu se enkrat offer" priority="None"></action>
+    <action id="415" created="1205137269201" resolution="RESOVED" resolved="1215282746260" description="pprispevek za cosy dojencke" priority="None"></action>
+    <action id="414" created="1204826584217" resolution="RESOVED" resolved="1215282746260" description="finish slider doc, commit and synchronize visht both svn, telll guy thy are not reading apt" priority="None"></action>
+    <action id="413" created="1204813098256" resolution="RESOVED" resolved="1215282746260" description="posodoobi slider docs z api sppreembani" priority="None"></action>
+    <action id="412" created="1204809149015" resolution="TRASHED" resolved="1215282746260" description="" priority="None"></action>
+    <action id="385" created="1204638278602" resolution="RESOVED" resolved="1215282746261" description="I discovered that you did not understood out debate with Andrey, also changelog signals that. I had change your implementation significantly. \n\nPlease do synchronize, check what I did differently and read my comments and check if I wrote my design intentions well and clear.\n\nThere is one of tests for testGetLatestReceivedValue() failing. Please check, it was working before we make changes for Andrey." priority="None"></action>
+    <action id="383" created="1204627006065" resolution="RESOVED" resolved="1215282746261" description="eduard: bo RM dovolj?" priority="None"></action>
+    <action id="382" created="1204626980561" resolution="RESOVED" resolved="1215282746261" description="poslji report pogovora flash teamu, napotki glede optics serverja" priority="None"></action>
+    <action id="377" created="1204622810513" resolution="TRASHED" resolved="1215282746261" description="" priority="None"></action>
+    <action id="371" created="1204546377184" resolution="RESOVED" resolved="1215282746261" description="should not be possible to add or rename folders in defautl group" priority="None"></action>
+    <action id="350" created="1204489216063" resolution="TRASHED" resolved="1215282746261" description="project chooser to inbasket" priority="None"></action>
+    <action id="349" created="1204489077957" resolution="RESOVED" resolved="1215282746261" description="jgtd: white bacckground in table" priority="None"></action>
+    <action id="348" created="1204489077955" resolution="RESOVED" resolved="1215282746262" description="CSL: oddaj potovanje tabelco" priority="None"></action>
+    <action id="347" created="1204489077952" resolution="TRASHED" resolved="1215282746262" description="restavriraj palm" priority="None"></action>
+    <action id="346" created="1204489077950" resolution="RESOVED" resolved="1215282746262" description="preveri ali je anka placala potne stroske" priority="None"></action>
+    <action id="345" created="1204489077948" resolution="RESOVED" resolved="1215282746262" description="mail DESY housing" priority="None"></action>
+    <action id="344" created="1204489077946" resolution="RESOVED" resolved="1215282746262" description="AcC: rok bertoncelj meeting" priority="None"></action>
+    <action id="343" created="1204489077943" resolution="RESOVED" resolved="1215282746262" description="tilen glede flasha" priority="None"></action>
+    <action id="342" created="1204489077941" resolution="RESOVED" resolved="1215282746262" description="mail pioter" priority="None"></action>
+    <action id="341" created="1204489077939" resolution="RESOVED" resolved="1215282746262" description="albert horvat, fizik" priority="None"></action>
+    <action id="340" created="1204489077937" resolution="RESOVED" resolved="1215282746262" description="it: zakaj fc2?" priority="None"></action>
+    <action id="339" created="1204489077935" resolution="RESOVED" resolved="1215282746263" description="ANKA-2008: preveri ticket za potovanje, zdravstvena" priority="None"></action>
+    <action id="338" created="1204489077933" resolution="RESOVED" resolved="1215282746263" description="gtd link za jureta, narocimo knjigo?" priority="None"></action>
+    <action id="337" created="1204489077930" resolution="RESOVED" resolved="1215282746263" description="zmeni kdaj se dobis z juretom v ponedeljek" priority="None"></action>
+    <action id="336" created="1204489077928" resolution="TRASHED" resolved="1215282746263" description="kuhinja, pposoda" priority="None"></action>
+    <action id="335" created="1204489077926" resolution="RESOVED" resolved="1215282746263" description="roze" priority="None"></action>
+    <action id="334" created="1204489077924" resolution="RESOVED" resolved="1215282746263" description="perilo" priority="None"></action>
+    <action id="333" created="1204489077921" resolution="RESOVED" resolved="1215282746263" description="srajce" priority="None"></action>
+    <action id="332" created="1204489077919" resolution="RESOVED" resolved="1215282746263" description="spakiraj se" priority="None"></action>
+    <action id="331" created="1204489077917" resolution="TRASHED" resolved="1215282746264" description="nalozi mp3je na telefon" priority="None"></action>
+    <action id="330" created="1204489077915" resolution="RESOVED" resolved="1215282746264" description="CSL: Control sheet internal release + testing" priority="None"></action>
+    <action id="329" created="1204489077913" resolution="RESOVED" resolved="1215282746264" description="Davor: send CallmPool" priority="None"></action>
+    <action id="328" created="1204489077910" resolution="RESOVED" resolved="1215282746264" description="Rok: zmeni za fitness" priority="None"></action>
+    <action id="327" created="1204489077907" resolution="RESOVED" resolved="1215282746264" description="DESY-FLASH: potrdi prejem narocila, povprasaj za matlab server" priority="None"></action>
+    <action id="326" created="1204489077903" resolution="RESOVED" resolved="1215282746264" description="DESY2008: startaj projekt" priority="None"></action>
+    <action id="325" created="1204489077887" resolution="RESOVED" resolved="1215282746264" description="igor: ks kom imam razgovor?" priority="None"></action>
+    <action id="324" created="1204489077883" resolution="RESOVED" resolved="1215282746264" description="ANKa in PLC, moramo podpreti PLCje v uioc sicer pocasi zgubimo prevlado v SR." priority="None"></action>
+    <action id="323" created="1204489077870" resolution="RESOVED" resolved="1215282746264" description="alberta odpikat" priority="None"></action>
+    <action id="322" created="1204489077866" resolution="TRASHED" resolved="1215282746265" description="pralni stroj" priority="None"></action>
+    <action id="321" created="1204489077864" resolution="TRASHED" resolved="1215282746265" description="pomivalni stroj" priority="None"></action>
+    <action id="320" created="1204489077860" resolution="RESOVED" resolved="1215282746265" description="can poret check appartments?" priority="None"></action>
+    <action id="319" created="1204489077840" resolution="RESOVED" resolved="1215282746265" description="prenesi projektne tickete iz sales" priority="None"></action>
+    <action id="318" created="1204489077837" resolution="RESOVED" resolved="1215282746265" description="naroci pregled avta" priority="None"></action>
+    <action id="317" created="1204489077834" resolution="RESOVED" resolved="1215282746265" description="prosi ppitra za ogled stanovanj" priority="None"></action>
+    <action id="316" created="1204489077824" resolution="RESOVED" resolved="1215282746265" description="pospravi mizo" priority="None"></action>
+    <action id="315" created="1204489077784" resolution="RESOVED" resolved="1215282746265" description="polji calmpool davorju in adi" priority="None"></action>
+    <action id="314" created="1204489077782" resolution="RESOVED" resolved="1215282746266" description="predelaj inbox tray " priority="None"></action>
+    <action id="313" created="1204489077780" resolution="RESOVED" resolved="1215282746266" description="rok: ali moram kaj narediti z davki od KD izpiska" priority="None"></action>
+    <action id="312" created="1204489077778" resolution="RESOVED" resolved="1215282746266" description="acc: opomni prata glede tilna" priority="None"></action>
+    <action id="311" created="1204489077775" resolution="TRASHED" resolved="1215282746266" description="igor: kako se izplacuje moja placa? julija sem dobil izplacano uradno, potem pa neuradno, zmenjen pa sem bil za neuradno" priority="None"></action>
+    <action id="310" created="1204489077773" resolution="RESOVED" resolved="1215282746266" description="jaka: je ze releasan z remote konfiguracijo?" priority="None"></action>
+    <action id="309" created="1204489077769" resolution="RESOVED" resolved="1215282746266" description="install DESY printer" priority="None"></action>
+    <action id="308" created="1204489077766" resolution="RESOVED" resolved="1215282746266" description="Wolfgang: poslji taske za machine, dodaj v offer se eno ceno za low level zadeve" priority="None"></action>
+    <action id="307" created="1204489077762" resolution="TRASHED" resolved="1215282746266" description="DESY: ticket jaku za ocitne buge" priority="None"></action>
+    <action id="306" created="1204489077759" resolution="RESOVED" resolved="1215282746267" description="ANKA: preglej pogodbo ko pajor poslje" priority="None"></action>
+    <action id="305" created="1204489077757" resolution="RESOVED" resolved="1215282746267" description="clausen mail za cas" priority="None"></action>
+    <action id="304" created="1204489077755" resolution="RESOVED" resolved="1215282746267" description="smo pikusa odpikali?" priority="None"></action>
+    <action id="303" created="1204489077742" resolution="RESOVED" resolved="1215282746267" description="phill: sever was donw, in spider there were messages link status not available, time to tie it switched to link not avaliable, at this time spider was red. But then returned to not-available, and spider was green again. Should we make spider red also when status nto available or should tine permanently say link is not available. When server was up again, status did not update automatically, we had to refresh. " priority="None"></action>
+    <action id="302" created="1204489077740" resolution="RESOVED" resolved="1215282746267" description="FLASH:  I cannot make any sense from the golden orbit dialog in matlab. What\n&gt; are the outer lists for? What does one enter in any of them (in how\n&gt; many lines)??" priority="None"></action>
+    <action id="301" created="1204489077735" resolution="TRASHED" resolved="1215282746267" description="DESY: pojdi skozi aplikacije" priority="None"></action>
+    <action id="300" created="1204489077733" resolution="TRASHED" resolved="1215282746267" description="DESY: testiraj AlV" priority="None"></action>
+    <action id="299" created="1204489077731" resolution="RESOVED" resolved="1215282746267" description="ping wolfgang" priority="None"></action>
+    <action id="298" created="1204489077718" resolution="TRASHED" resolved="1215282746268" description="" priority="None"></action>
+    <action id="297" created="1204489077716" resolution="RESOVED" resolved="1215282746268" description="clausen: sporoci, ko bos polsal pogodbo na ijs, erland.mueller@desy.de me ni kontaktiral." priority="None"></action>
+    <action id="296" created="1204489077714" resolution="RESOVED" resolved="1215282746268" description="clausenL: pon 15, ppet 10:30" priority="None"></action>
+    <action id="295" created="1204489077712" resolution="RESOVED" resolved="1215282746268" description="torsten: kako je z idejami za diplomo, lahko kontaktiram server razvijalce?" priority="None"></action>
+    <action id="294" created="1204489077709" resolution="RESOVED" resolved="1215282746268" description="Uwe: poklici" priority="None"></action>
+  </list>
+  <list id="32" name="CSL" type="REFERENCE" closed="false">
+    <action id="162" created="1204489077635" resolution="OPEN" resolved="1215282746268" description="mark: mogoce bi pa vseeno imeli holding, stari clani bi imeli delez v holdingu, novei clani bi imeli deleze v hcerinskih firmah, gis clani bi kupili gis delez za deleze v holdingu" priority="None"></action>
+  </list>
+</lists>
+<projects>
+  <project id="0" name="GTD-Free-Bug" closed="false" actions="354,352"></project>
+  <project id="33" name="TANGO-CSS" closed="false" actions="59"></project>
+  <project id="25" name="GTD-Free-FR" closed="false" actions="250,353,293,367,363,361"></project>
+  <project id="27" name="FLASH Rewrite" closed="false" actions="82,81,79,389,407,124"></project>
+  <project id="26" name="ANKA 2008" closed="false" actions="126,100,387,438"></project>
+  <project id="29" name="Sales" closed="false" actions="365,366,370"></project>
+  <project id="28" name="DESY 2008" closed="false" actions="404,390,400,399,381,376,123,87,86,84,83,420,419,421,428,88,439"></project>
+  <project id="31" name="CSS-DAL" closed="false" actions="372"></project>
+  <project id="30" name="DESY 2007" closed="false" actions="85"></project>
+</projects>
+<queue id="-4" name="Next Actions" actions=""></queue>
+</gtd-data>
